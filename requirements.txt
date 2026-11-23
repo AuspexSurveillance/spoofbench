@@ -1,0 +1,5 @@
+# The simulator, templates and detectors use only the Python standard library (3.9+).
+numpy            # ranking experiment, recorded-data replay
+scikit-learn     # ranking experiment
+matplotlib       # tools/make_figures.py
+databento        # only for tools/get_cme_mbo.py and tools/prep_dbn.py

@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+title: "spoofbench: a seeded benchmark for spoofing and layering surveillance"
+version: 0.3.0
+date-released: 2026-11-23
+license: Apache-2.0
+authors:
+  - family-names: Li
+    given-names: Allen Yilun
+    affiliation: "Auspex Surveillance, Inc."
+preferred-citation:
+  type: article
+  title: "Calibrating Spoofing and Layering Surveillance Without Labelled Cases: A Seeded Benchmark on Simulated and Recorded Futures Order Books"
+  authors:
+    - family-names: Li
+      given-names: Allen Yilun
+  year: 2026

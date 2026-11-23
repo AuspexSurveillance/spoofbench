@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+# licensed market data, replay windows and session logs are never committed
+cme_mbo/
+*.dbn.zst
+*.npz
+*.pkl
+APIKey.txt
+.env

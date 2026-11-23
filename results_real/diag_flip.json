@@ -1,0 +1,5 @@
+{
+ "note": "Completed faithful Oystacher episodes in the test sessions; written from the output of tools/diag_flip.py (ES windows 1,4; ZN all windows).",
+ "ES": {"episodes": 128, "flip_executed_on_entry": 105, "no_spoof_order_passes_fill_test": 49, "some_spoof_order_had_a_fill": 51, "both_conditions_met": 75, "spoof_qty": 5542, "spoof_filled_qty": 1002},
+ "ZN": {"episodes": 483, "flip_executed_on_entry": 480, "no_spoof_order_passes_fill_test": 7, "some_spoof_order_had_a_fill": 8, "both_conditions_met": 475, "spoof_qty": 1540376, "spoof_filled_qty": 3994}
+}

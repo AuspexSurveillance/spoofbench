@@ -1,0 +1,9 @@
+python tools/selfq_floor.py LOGDIR ZN        (30 baseline and 30 test sessions, 16 legitimate accounts)
+
+floor 0.02: recall 0.078, evasive 0.0, false cases {} (0.0 per 100 legitimate account-sessions)
+   by template: {'chen': [0, 125], 'chen/evasive': [0, 57], 'coscia': [0, 89], 'coscia/evasive': [0, 31], 'oystacher': [15, 483], 'oystacher/evasive': [0, 192], 'sarao': [43, 43], 'sarao/evasive': [0, 11]}
+   multiples: {'DISC_1': 0.02, 'DISC_2': 0.02, 'DISC_3': 0.02, 'DISC_4': 0.02, 'DISC_5': 0.02, 'DISC_6': 0.02, 'DISC_7': 0.02, 'DISC_8': 0.02, 'EXEC_1': 0.02, 'EXEC_2': 0.02, 'EXEC_3': 0.02, 'MM_FAST_1': 0.02, 'MM_LADDER': 0.02, 'MM_SKEW_FAST': 0.02, 'MM_SKEW_SLOW_1': 0.02, 'MM_SKEW_SLOW_2': 0.02, 'M_CHEN_HI': 0.02, 'M_CHEN_LO': 0.02, 'M_COSCIA': 0.02, 'M_MM_CHEN': 0.02, 'M_OYST': 0.447, 'M_SARAO': 2.9013}
+floor 0.002: recall 0.086, evasive 0.0, false cases {'mm': 2, 'prop': 1} (0.62 per 100 legitimate account-sessions)
+   by template: {'chen': [6, 125], 'chen/evasive': [0, 57], 'coscia': [0, 89], 'coscia/evasive': [0, 31], 'oystacher': [15, 483], 'oystacher/evasive': [0, 192], 'sarao': [43, 43], 'sarao/evasive': [0, 11]}
+   multiples: {'DISC_1': 0.004, 'DISC_2': 0.0041, 'DISC_3': 0.0041, 'DISC_4': 0.0037, 'DISC_5': 0.004, 'DISC_6': 0.004, 'DISC_7': 0.0039, 'DISC_8': 0.0039, 'EXEC_1': 0.0059, 'EXEC_2': 0.0056, 'EXEC_3': 0.0057, 'MM_FAST_1': 0.005, 'MM_LADDER': 0.0058, 'MM_SKEW_FAST': 0.0069, 'MM_SKEW_SLOW_1': 0.0037, 'MM_SKEW_SLOW_2': 0.0029, 'M_CHEN_HI': 0.0079, 'M_CHEN_LO': 0.0063, 'M_COSCIA': 0.0176, 'M_MM_CHEN': 0.007, 'M_OYST': 0.447, 'M_SARAO': 2.9013}
+floor 0.0: identical to floor 0.002

@@ -1,0 +1,1366 @@
+{
+ "meta": {
+  "base_sessions": 30,
+  "test_sessions": 30,
+  "session_seconds": 1800.0,
+  "accounts": 22,
+  "legit_accounts": 16,
+  "firm_orders_test": 240259,
+  "candidates_test": 29089,
+  "episodes_test": 3811,
+  "episodes_with_fill": 1031,
+  "attempts_without_fill": 2763,
+  "seed": 20261123,
+  "instrument": "ZN",
+  "source": "CME Globex MBO via Databento, replayed",
+  "baseline_days": [
+   "20261102",
+   "20261103",
+   "20261104",
+   "20261105",
+   "20261106"
+  ],
+  "test_days": [
+   "20261109",
+   "20261110",
+   "20261111",
+   "20261112",
+   "20261113"
+  ],
+  "market_events_test": 7600349,
+  "median_touch_size": 1580,
+  "median_size_within_3_ticks": 11606,
+  "windows_per_day": "all"
+ },
+ "literal_defaults": {
+  "recall": {
+   "chen": [
+    0,
+    125
+   ],
+   "chen/evasive": [
+    0,
+    57
+   ],
+   "coscia": [
+    0,
+    89
+   ],
+   "coscia/evasive": [
+    0,
+    31
+   ],
+   "oystacher": [
+    0,
+    483
+   ],
+   "oystacher/evasive": [
+    0,
+    192
+   ],
+   "sarao": [
+    0,
+    43
+   ],
+   "sarao/evasive": [
+    0,
+    11
+   ]
+  },
+  "cases": 0,
+  "false_cases": {},
+  "false_cases_total": 0,
+  "instances": 0,
+  "false_instances": 0,
+  "sessions": 30,
+  "name": "5.1/5.2/5.8 literal, Appendix C defaults",
+  "false_cases_per_100_legit_account_sessions": 0.0,
+  "cases_per_session": 0.0,
+  "recall_faithful": 0.0,
+  "recall_evasive": 0.0
+ },
+ "fixed_k": [
+  {
+   "recall": {
+    "chen": [
+     79,
+     125
+    ],
+    "chen/evasive": [
+     2,
+     57
+    ],
+    "coscia": [
+     80,
+     89
+    ],
+    "coscia/evasive": [
+     23,
+     31
+    ],
+    "oystacher": [
+     474,
+     483
+    ],
+    "oystacher/evasive": [
+     183,
+     192
+    ],
+    "sarao": [
+     43,
+     43
+    ],
+    "sarao/evasive": [
+     0,
+     11
+    ]
+   },
+   "cases": 159,
+   "false_cases": {
+    "exec": 15,
+    "mm": 21,
+    "manip-acct": 5,
+    "prop": 2
+   },
+   "false_cases_total": 43,
+   "instances": 1366,
+   "false_instances": 410,
+   "sessions": 30,
+   "name": "fixed k=0.002",
+   "false_cases_per_100_legit_account_sessions": 7.92,
+   "cases_per_session": 5.3,
+   "recall_faithful": 0.914,
+   "recall_evasive": 0.715
+  },
+  {
+   "recall": {
+    "chen": [
+     30,
+     125
+    ],
+    "chen/evasive": [
+     0,
+     57
+    ],
+    "coscia": [
+     62,
+     89
+    ],
+    "coscia/evasive": [
+     10,
+     31
+    ],
+    "oystacher": [
+     474,
+     483
+    ],
+    "oystacher/evasive": [
+     183,
+     192
+    ],
+    "sarao": [
+     43,
+     43
+    ],
+    "sarao/evasive": [
+     0,
+     11
+    ]
+   },
+   "cases": 88,
+   "false_cases": {
+    "exec": 1
+   },
+   "false_cases_total": 1,
+   "instances": 847,
+   "false_instances": 9,
+   "sessions": 30,
+   "name": "fixed k=0.005",
+   "false_cases_per_100_legit_account_sessions": 0.21,
+   "cases_per_session": 2.93,
+   "recall_faithful": 0.823,
+   "recall_evasive": 0.663
+  },
+  {
+   "recall": {
+    "chen": [
+     0,
+     125
+    ],
+    "chen/evasive": [
+     0,
+     57
+    ],
+    "coscia": [
+     22,
+     89
+    ],
+    "coscia/evasive": [
+     0,
+     31
+    ],
+    "oystacher": [
+     473,
+     483
+    ],
+    "oystacher/evasive": [
+     182,
+     192
+    ],
+    "sarao": [
+     43,
+     43
+    ],
+    "sarao/evasive": [
+     0,
+     11
+    ]
+   },
+   "cases": 62,
+   "false_cases": {},
+   "false_cases_total": 0,
+   "instances": 731,
+   "false_instances": 0,
+   "sessions": 30,
+   "name": "fixed k=0.01",
+   "false_cases_per_100_legit_account_sessions": 0.0,
+   "cases_per_session": 2.07,
+   "recall_faithful": 0.727,
+   "recall_evasive": 0.625
+  },
+  {
+   "recall": {
+    "chen": [
+     0,
+     125
+    ],
+    "chen/evasive": [
+     0,
+     57
+    ],
+    "coscia": [
+     0,
+     89
+    ],
+    "coscia/evasive": [
+     0,
+     31
+    ],
+    "oystacher": [
+     472,
+     483
+    ],
+    "oystacher/evasive": [
+     178,
+     192
+    ],
+    "sarao": [
+     43,
+     43
+    ],
+    "sarao/evasive": [
+     0,
+     11
+    ]
+   },
+   "cases": 56,
+   "false_cases": {},
+   "false_cases_total": 0,
+   "instances": 700,
+   "false_instances": 0,
+   "sessions": 30,
+   "name": "fixed k=0.02",
+   "false_cases_per_100_legit_account_sessions": 0.0,
+   "cases_per_session": 1.87,
+   "recall_faithful": 0.696,
+   "recall_evasive": 0.612
+  },
+  {
+   "recall": {
+    "chen": [
+     0,
+     125
+    ],
+    "chen/evasive": [
+     0,
+     57
+    ],
+    "coscia": [
+     0,
+     89
+    ],
+    "coscia/evasive": [
+     0,
+     31
+    ],
+    "oystacher": [
+     466,
+     483
+    ],
+    "oystacher/evasive": [
+     141,
+     192
+    ],
+    "sarao": [
+     43,
+     43
+    ],
+    "sarao/evasive": [
+     0,
+     11
+    ]
+   },
+   "cases": 56,
+   "false_cases": {},
+   "false_cases_total": 0,
+   "instances": 657,
+   "false_instances": 0,
+   "sessions": 30,
+   "name": "fixed k=0.05",
+   "false_cases_per_100_legit_account_sessions": 0.0,
+   "cases_per_session": 1.87,
+   "recall_faithful": 0.688,
+   "recall_evasive": 0.485
+  },
+  {
+   "recall": {
+    "chen": [
+     0,
+     125
+    ],
+    "chen/evasive": [
+     0,
+     57
+    ],
+    "coscia": [
+     0,
+     89
+    ],
+    "coscia/evasive": [
+     0,
+     31
+    ],
+    "oystacher": [
+     434,
+     483
+    ],
+    "oystacher/evasive": [
+     65,
+     192
+    ],
+    "sarao": [
+     43,
+     43
+    ],
+    "sarao/evasive": [
+     0,
+     11
+    ]
+   },
+   "cases": 56,
+   "false_cases": {},
+   "false_cases_total": 0,
+   "instances": 549,
+   "false_instances": 0,
+   "sessions": 30,
+   "name": "fixed k=0.1",
+   "false_cases_per_100_legit_account_sessions": 0.0,
+   "cases_per_session": 1.87,
+   "recall_faithful": 0.645,
+   "recall_evasive": 0.223
+  },
+  {
+   "recall": {
+    "chen": [
+     0,
+     125
+    ],
+    "chen/evasive": [
+     0,
+     57
+    ],
+    "coscia": [
+     0,
+     89
+    ],
+    "coscia/evasive": [
+     0,
+     31
+    ],
+    "oystacher": [
+     312,
+     483
+    ],
+    "oystacher/evasive": [
+     0,
+     192
+    ],
+    "sarao": [
+     43,
+     43
+    ],
+    "sarao/evasive": [
+     0,
+     11
+    ]
+   },
+   "cases": 56,
+   "false_cases": {},
+   "false_cases_total": 0,
+   "instances": 362,
+   "false_instances": 0,
+   "sessions": 30,
+   "name": "fixed k=0.2",
+   "false_cases_per_100_legit_account_sessions": 0.0,
+   "cases_per_session": 1.87,
+   "recall_faithful": 0.48,
+   "recall_evasive": 0.0
+  },
+  {
+   "recall": {
+    "chen": [
+     0,
+     125
+    ],
+    "chen/evasive": [
+     0,
+     57
+    ],
+    "coscia": [
+     0,
+     89
+    ],
+    "coscia/evasive": [
+     0,
+     31
+    ],
+    "oystacher": [
+     168,
+     483
+    ],
+    "oystacher/evasive": [
+     0,
+     192
+    ],
+    "sarao": [
+     43,
+     43
+    ],
+    "sarao/evasive": [
+     0,
+     11
+    ]
+   },
+   "cases": 54,
+   "false_cases": {},
+   "false_cases_total": 0,
+   "instances": 218,
+   "false_instances": 0,
+   "sessions": 30,
+   "name": "fixed k=0.3",
+   "false_cases_per_100_legit_account_sessions": 0.0,
+   "cases_per_session": 1.8,
+   "recall_faithful": 0.285,
+   "recall_evasive": 0.0
+  },
+  {
+   "recall": {
+    "chen": [
+     0,
+     125
+    ],
+    "chen/evasive": [
+     0,
+     57
+    ],
+    "coscia": [
+     0,
+     89
+    ],
+    "coscia/evasive": [
+     0,
+     31
+    ],
+    "oystacher": [
+     9,
+     483
+    ],
+    "oystacher/evasive": [
+     0,
+     192
+    ],
+    "sarao": [
+     43,
+     43
+    ],
+    "sarao/evasive": [
+     0,
+     11
+    ]
+   },
+   "cases": 29,
+   "false_cases": {},
+   "false_cases_total": 0,
+   "instances": 59,
+   "false_instances": 0,
+   "sessions": 30,
+   "name": "fixed k=0.5",
+   "false_cases_per_100_legit_account_sessions": 0.0,
+   "cases_per_session": 0.97,
+   "recall_faithful": 0.07,
+   "recall_evasive": 0.0
+  },
+  {
+   "recall": {
+    "chen": [
+     0,
+     125
+    ],
+    "chen/evasive": [
+     0,
+     57
+    ],
+    "coscia": [
+     0,
+     89
+    ],
+    "coscia/evasive": [
+     0,
+     31
+    ],
+    "oystacher": [
+     0,
+     483
+    ],
+    "oystacher/evasive": [
+     0,
+     192
+    ],
+    "sarao": [
+     43,
+     43
+    ],
+    "sarao/evasive": [
+     0,
+     11
+    ]
+   },
+   "cases": 26,
+   "false_cases": {},
+   "false_cases_total": 0,
+   "instances": 50,
+   "false_instances": 0,
+   "sessions": 30,
+   "name": "fixed k=1.0",
+   "false_cases_per_100_legit_account_sessions": 0.0,
+   "cases_per_session": 0.87,
+   "recall_faithful": 0.058,
+   "recall_evasive": 0.0
+  },
+  {
+   "recall": {
+    "chen": [
+     0,
+     125
+    ],
+    "chen/evasive": [
+     0,
+     57
+    ],
+    "coscia": [
+     0,
+     89
+    ],
+    "coscia/evasive": [
+     0,
+     31
+    ],
+    "oystacher": [
+     0,
+     483
+    ],
+    "oystacher/evasive": [
+     0,
+     192
+    ],
+    "sarao": [
+     43,
+     43
+    ],
+    "sarao/evasive": [
+     0,
+     11
+    ]
+   },
+   "cases": 26,
+   "false_cases": {},
+   "false_cases_total": 0,
+   "instances": 50,
+   "false_instances": 0,
+   "sessions": 30,
+   "name": "fixed k=2.0",
+   "false_cases_per_100_legit_account_sessions": 0.0,
+   "cases_per_session": 0.87,
+   "recall_faithful": 0.058,
+   "recall_evasive": 0.0
+  }
+ ],
+ "self_quantile": {
+  "recall": {
+   "chen": [
+    0,
+    125
+   ],
+   "chen/evasive": [
+    0,
+    57
+   ],
+   "coscia": [
+    0,
+    89
+   ],
+   "coscia/evasive": [
+    0,
+    31
+   ],
+   "oystacher": [
+    15,
+    483
+   ],
+   "oystacher/evasive": [
+    0,
+    192
+   ],
+   "sarao": [
+    43,
+    43
+   ],
+   "sarao/evasive": [
+    0,
+    11
+   ]
+  },
+  "cases": 30,
+  "false_cases": {},
+  "false_cases_total": 0,
+  "instances": 65,
+  "false_instances": 0,
+  "sessions": 30,
+  "name": "self-quantile 99.5%",
+  "false_cases_per_100_legit_account_sessions": 0.0,
+  "cases_per_session": 1.0,
+  "recall_faithful": 0.078,
+  "recall_evasive": 0.0,
+  "k": {
+   "DISC_1": 0.02,
+   "DISC_2": 0.02,
+   "DISC_3": 0.02,
+   "DISC_4": 0.02,
+   "DISC_5": 0.02,
+   "DISC_6": 0.02,
+   "DISC_7": 0.02,
+   "DISC_8": 0.02,
+   "EXEC_1": 0.02,
+   "EXEC_2": 0.02,
+   "EXEC_3": 0.02,
+   "MM_FAST_1": 0.02,
+   "MM_LADDER": 0.02,
+   "MM_SKEW_FAST": 0.02,
+   "MM_SKEW_SLOW_1": 0.02,
+   "MM_SKEW_SLOW_2": 0.02,
+   "M_CHEN_HI": 0.02,
+   "M_CHEN_LO": 0.02,
+   "M_COSCIA": 0.02,
+   "M_MM_CHEN": 0.02,
+   "M_OYST": 0.447,
+   "M_SARAO": 2.901
+  }
+ },
+ "class_k": {
+  "recall": {
+   "chen": [
+    57,
+    125
+   ],
+   "chen/evasive": [
+    2,
+    57
+   ],
+   "coscia": [
+    80,
+    89
+   ],
+   "coscia/evasive": [
+    23,
+    31
+   ],
+   "oystacher": [
+    474,
+    483
+   ],
+   "oystacher/evasive": [
+    183,
+    192
+   ],
+   "sarao": [
+    43,
+    43
+   ],
+   "sarao/evasive": [
+    0,
+    11
+   ]
+  },
+  "cases": 104,
+  "false_cases": {
+   "prop": 2,
+   "exec": 1,
+   "manip-acct": 1
+  },
+  "false_cases_total": 4,
+  "instances": 968,
+  "false_instances": 45,
+  "sessions": 30,
+  "name": "per-class k from seeded baseline",
+  "false_cases_per_100_legit_account_sessions": 0.62,
+  "cases_per_session": 3.47,
+  "recall_faithful": 0.884,
+  "recall_evasive": 0.715,
+  "k_by_class": {
+   "exec": 0.005,
+   "mm": 0.005,
+   "prop": 0.002
+  }
+ },
+ "ablations": [
+  {
+   "recall": {
+    "chen": [
+     57,
+     125
+    ],
+    "chen/evasive": [
+     2,
+     57
+    ],
+    "coscia": [
+     80,
+     89
+    ],
+    "coscia/evasive": [
+     23,
+     31
+    ],
+    "oystacher": [
+     474,
+     483
+    ],
+    "oystacher/evasive": [
+     183,
+     192
+    ],
+    "sarao": [
+     43,
+     43
+    ],
+    "sarao/evasive": [
+     0,
+     11
+    ]
+   },
+   "cases": 104,
+   "false_cases": {
+    "prop": 2,
+    "exec": 1,
+    "manip-acct": 1
+   },
+   "false_cases_total": 4,
+   "instances": 968,
+   "false_instances": 45,
+   "sessions": 30,
+   "name": "per-class k (reference)",
+   "false_cases_per_100_legit_account_sessions": 0.62,
+   "cases_per_session": 3.47,
+   "recall_faithful": 0.884,
+   "recall_evasive": 0.715
+  },
+  {
+   "recall": {
+    "chen": [
+     57,
+     125
+    ],
+    "chen/evasive": [
+     2,
+     57
+    ],
+    "coscia": [
+     80,
+     89
+    ],
+    "coscia/evasive": [
+     23,
+     31
+    ],
+    "oystacher": [
+     1,
+     483
+    ],
+    "oystacher/evasive": [
+     0,
+     192
+    ],
+    "sarao": [
+     43,
+     43
+    ],
+    "sarao/evasive": [
+     0,
+     11
+    ]
+   },
+   "cases": 75,
+   "false_cases": {
+    "prop": 2,
+    "exec": 1,
+    "manip-acct": 1
+   },
+   "false_cases_total": 4,
+   "instances": 301,
+   "false_instances": 34,
+   "sessions": 30,
+   "name": "no flip extension",
+   "false_cases_per_100_legit_account_sessions": 0.62,
+   "cases_per_session": 2.5,
+   "recall_faithful": 0.245,
+   "recall_evasive": 0.086
+  },
+  {
+   "recall": {
+    "chen": [
+     57,
+     125
+    ],
+    "chen/evasive": [
+     2,
+     57
+    ],
+    "coscia": [
+     80,
+     89
+    ],
+    "coscia/evasive": [
+     23,
+     31
+    ],
+    "oystacher": [
+     474,
+     483
+    ],
+    "oystacher/evasive": [
+     183,
+     192
+    ],
+    "sarao": [
+     0,
+     43
+    ],
+    "sarao/evasive": [
+     0,
+     11
+    ]
+   },
+   "cases": 78,
+   "false_cases": {
+    "prop": 2,
+    "exec": 1,
+    "manip-acct": 1
+   },
+   "false_cases_total": 4,
+   "instances": 918,
+   "false_instances": 45,
+   "sessions": 30,
+   "name": "no persistent-layering extension",
+   "false_cases_per_100_legit_account_sessions": 0.62,
+   "cases_per_session": 2.6,
+   "recall_faithful": 0.826,
+   "recall_evasive": 0.715
+  },
+  {
+   "recall": {
+    "chen": [
+     57,
+     125
+    ],
+    "chen/evasive": [
+     2,
+     57
+    ],
+    "coscia": [
+     80,
+     89
+    ],
+    "coscia/evasive": [
+     23,
+     31
+    ],
+    "oystacher": [
+     474,
+     483
+    ],
+    "oystacher/evasive": [
+     183,
+     192
+    ],
+    "sarao": [
+     43,
+     43
+    ],
+    "sarao/evasive": [
+     0,
+     11
+    ]
+   },
+   "cases": 104,
+   "false_cases": {
+    "prop": 2,
+    "exec": 1,
+    "manip-acct": 1
+   },
+   "false_cases_total": 4,
+   "instances": 968,
+   "false_instances": 45,
+   "sessions": 30,
+   "name": "no cross-instrument alignment",
+   "false_cases_per_100_legit_account_sessions": 0.62,
+   "cases_per_session": 3.47,
+   "recall_faithful": 0.884,
+   "recall_evasive": 0.715
+  },
+  {
+   "recall": {
+    "chen": [
+     59,
+     125
+    ],
+    "chen/evasive": [
+     2,
+     57
+    ],
+    "coscia": [
+     82,
+     89
+    ],
+    "coscia/evasive": [
+     24,
+     31
+    ],
+    "oystacher": [
+     475,
+     483
+    ],
+    "oystacher/evasive": [
+     184,
+     192
+    ],
+    "sarao": [
+     43,
+     43
+    ],
+    "sarao/evasive": [
+     0,
+     11
+    ]
+   },
+   "cases": 109,
+   "false_cases": {
+    "prop": 3,
+    "exec": 1,
+    "manip-acct": 1
+   },
+   "false_cases_total": 5,
+   "instances": 996,
+   "false_instances": 48,
+   "sessions": 30,
+   "name": "no exclusions",
+   "false_cases_per_100_legit_account_sessions": 0.83,
+   "cases_per_session": 3.63,
+   "recall_faithful": 0.891,
+   "recall_evasive": 0.722
+  },
+  {
+   "recall": {
+    "chen": [
+     0,
+     125
+    ],
+    "chen/evasive": [
+     0,
+     57
+    ],
+    "coscia": [
+     0,
+     89
+    ],
+    "coscia/evasive": [
+     0,
+     31
+    ],
+    "oystacher": [
+     466,
+     483
+    ],
+    "oystacher/evasive": [
+     141,
+     192
+    ],
+    "sarao": [
+     43,
+     43
+    ],
+    "sarao/evasive": [
+     0,
+     11
+    ]
+   },
+   "cases": 56,
+   "false_cases": {},
+   "false_cases_total": 0,
+   "instances": 657,
+   "false_instances": 0,
+   "sessions": 30,
+   "name": "fixed k=0.05 (for comparison)",
+   "false_cases_per_100_legit_account_sessions": 0.0,
+   "cases_per_session": 1.87,
+   "recall_faithful": 0.688,
+   "recall_evasive": 0.485
+  },
+  {
+   "recall": {
+    "chen": [
+     0,
+     125
+    ],
+    "chen/evasive": [
+     0,
+     57
+    ],
+    "coscia": [
+     0,
+     89
+    ],
+    "coscia/evasive": [
+     0,
+     31
+    ],
+    "oystacher": [
+     467,
+     483
+    ],
+    "oystacher/evasive": [
+     142,
+     192
+    ],
+    "sarao": [
+     43,
+     43
+    ],
+    "sarao/evasive": [
+     0,
+     11
+    ]
+   },
+   "cases": 56,
+   "false_cases": {},
+   "false_cases_total": 0,
+   "instances": 659,
+   "false_instances": 0,
+   "sessions": 30,
+   "name": "fixed k=0.05, no exclusions",
+   "false_cases_per_100_legit_account_sessions": 0.0,
+   "cases_per_session": 1.87,
+   "recall_faithful": 0.689,
+   "recall_evasive": 0.488
+  },
+  {
+   "recall": {
+    "chen": [
+     86,
+     125
+    ],
+    "chen/evasive": [
+     2,
+     57
+    ],
+    "coscia": [
+     88,
+     89
+    ],
+    "coscia/evasive": [
+     24,
+     31
+    ],
+    "oystacher": [
+     474,
+     483
+    ],
+    "oystacher/evasive": [
+     183,
+     192
+    ],
+    "sarao": [
+     43,
+     43
+    ],
+    "sarao/evasive": [
+     0,
+     11
+    ]
+   },
+   "cases": 247,
+   "false_cases": {
+    "manip-acct": 12,
+    "prop": 76,
+    "exec": 17,
+    "mm": 1
+   },
+   "false_cases_total": 106,
+   "instances": 1166,
+   "false_instances": 183,
+   "sessions": 30,
+   "name": "repetition n=1",
+   "false_cases_per_100_legit_account_sessions": 19.58,
+   "cases_per_session": 8.23,
+   "recall_faithful": 0.934,
+   "recall_evasive": 0.718
+  },
+  {
+   "recall": {
+    "chen": [
+     84,
+     125
+    ],
+    "chen/evasive": [
+     2,
+     57
+    ],
+    "coscia": [
+     88,
+     89
+    ],
+    "coscia/evasive": [
+     24,
+     31
+    ],
+    "oystacher": [
+     474,
+     483
+    ],
+    "oystacher/evasive": [
+     183,
+     192
+    ],
+    "sarao": [
+     43,
+     43
+    ],
+    "sarao/evasive": [
+     0,
+     11
+    ]
+   },
+   "cases": 187,
+   "false_cases": {
+    "manip-acct": 11,
+    "prop": 33,
+    "exec": 4
+   },
+   "false_cases_total": 48,
+   "instances": 1094,
+   "false_instances": 115,
+   "sessions": 30,
+   "name": "repetition 3 within 5 sessions",
+   "false_cases_per_100_legit_account_sessions": 7.71,
+   "cases_per_session": 6.23,
+   "recall_faithful": 0.931,
+   "recall_evasive": 0.718
+  }
+ ],
+ "ranking": {
+  "train_candidates": 33671,
+  "train_true": 1264,
+  "test_candidates": 22034,
+  "test_true": 1059,
+  "average_precision": {
+   "model": 0.993,
+   "by_imbalance_ratio": 0.915,
+   "by_size_asymmetry": 0.156
+  },
+  "top_n_per_session": {
+   "model": {
+    "5": {
+     "recall_faithful": 0.155,
+     "recall_all": 0.149,
+     "precision": 1.0
+    },
+    "10": {
+     "recall_faithful": 0.306,
+     "recall_all": 0.291,
+     "precision": 1.0
+    },
+    "20": {
+     "recall_faithful": 0.608,
+     "recall_all": 0.573,
+     "precision": 1.0
+    },
+    "40": {
+     "recall_faithful": 0.976,
+     "recall_all": 0.944,
+     "precision": 0.85
+    }
+   },
+   "by_imbalance_ratio": {
+    "5": {
+     "recall_faithful": 0.212,
+     "recall_all": 0.151,
+     "precision": 1.0
+    },
+    "10": {
+     "recall_faithful": 0.42,
+     "recall_all": 0.305,
+     "precision": 1.0
+    },
+    "20": {
+     "recall_faithful": 0.683,
+     "recall_all": 0.598,
+     "precision": 0.992
+    },
+    "40": {
+     "recall_faithful": 0.941,
+     "recall_all": 0.877,
+     "precision": 0.77
+    }
+   },
+   "by_size_asymmetry": {
+    "5": {
+     "recall_faithful": 0.053,
+     "recall_all": 0.049,
+     "precision": 0.453
+    },
+    "10": {
+     "recall_faithful": 0.086,
+     "recall_all": 0.077,
+     "precision": 0.377
+    },
+    "20": {
+     "recall_faithful": 0.126,
+     "recall_all": 0.113,
+     "precision": 0.285
+    },
+    "40": {
+     "recall_faithful": 0.175,
+     "recall_all": 0.15,
+     "precision": 0.186
+    }
+   }
+  },
+  "rule_instances_per_session": 30.6,
+  "rule_at_its_own_volume": {
+   "recall_faithful": 0.877,
+   "recall_all": 0.838,
+   "precision": 0.951
+  },
+  "model_at_rule_volume": {
+   "N": 31,
+   "recall_faithful": 0.888,
+   "recall_all": 0.853,
+   "precision": 0.967
+  }
+ },
+ "degradation_chen": {
+  "latency": [
+   {
+    "bin": "0-1",
+    "n": 15,
+    "rule": 0.333,
+    "model": 0.733
+   },
+   {
+    "bin": "1-2.5",
+    "n": 32,
+    "rule": 0.625,
+    "model": 0.625
+   },
+   {
+    "bin": "2.5-5",
+    "n": 67,
+    "rule": 0.493,
+    "model": 0.612
+   },
+   {
+    "bin": "5-10",
+    "n": 29,
+    "rule": 0.0,
+    "model": 0.31
+   },
+   {
+    "bin": "10-20",
+    "n": 39,
+    "rule": 0.026,
+    "model": 0.308
+   }
+  ],
+  "spoof_qty": [
+   {
+    "bin": "0-15",
+    "n": 21,
+    "rule": 0.0,
+    "model": 0.048
+   },
+   {
+    "bin": "15-30",
+    "n": 21,
+    "rule": 0.0,
+    "model": 0.19
+   },
+   {
+    "bin": "30-50",
+    "n": 44,
+    "rule": 0.273,
+    "model": 0.523
+   },
+   {
+    "bin": "50-80",
+    "n": 29,
+    "rule": 0.483,
+    "model": 0.552
+   },
+   {
+    "bin": "80-200",
+    "n": 67,
+    "rule": 0.493,
+    "model": 0.731
+   }
+  ]
+ },
+ "leave_one_template_out": {
+  "chen": {
+   "n": 125,
+   "model_never_shown_this_template": 0.416,
+   "model_trained_on_all": 0.632,
+   "rule": 0.456
+  },
+  "coscia": {
+   "n": 89,
+   "model_never_shown_this_template": 0.753,
+   "model_trained_on_all": 0.91,
+   "rule": 0.899
+  },
+  "oystacher": {
+   "n": 483,
+   "model_never_shown_this_template": 0.605,
+   "model_trained_on_all": 0.95,
+   "rule": 0.981
+  }
+ }
+}

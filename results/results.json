@@ -1,0 +1,1387 @@
+{
+ "meta": {
+  "base_sessions": 30,
+  "test_sessions": 30,
+  "session_seconds": 1800.0,
+  "seed": 20261123,
+  "accounts": 26,
+  "legit_accounts": 18,
+  "firm_orders_test": 687922,
+  "candidates_test": 120701,
+  "episodes_test": 4158,
+  "episodes_with_fill": 2266,
+  "attempts_without_fill": 1840,
+  "runtime_seconds": 103.7
+ },
+ "literal_defaults": {
+  "recall": {
+   "chen": [
+    0,
+    618
+   ],
+   "chen/evasive": [
+    0,
+    242
+   ],
+   "coscia": [
+    0,
+    333
+   ],
+   "coscia/evasive": [
+    0,
+    136
+   ],
+   "lebental": [
+    0,
+    130
+   ],
+   "lebental/evasive": [
+    0,
+    54
+   ],
+   "oystacher": [
+    0,
+    489
+   ],
+   "oystacher/evasive": [
+    0,
+    191
+   ],
+   "sarao": [
+    0,
+    48
+   ],
+   "sarao/evasive": [
+    0,
+    25
+   ]
+  },
+  "cases": 0,
+  "false_cases": {},
+  "false_cases_total": 0,
+  "instances": 0,
+  "false_instances": 0,
+  "sessions": 30,
+  "name": "5.1/5.2/5.8 literal, Appendix C defaults",
+  "false_cases_per_100_legit_account_sessions": 0.0,
+  "cases_per_session": 0.0,
+  "recall_faithful": 0.0,
+  "recall_evasive": 0.0
+ },
+ "fixed_k": [
+  {
+   "recall": {
+    "chen": [
+     444,
+     618
+    ],
+    "chen/evasive": [
+     49,
+     242
+    ],
+    "coscia": [
+     327,
+     333
+    ],
+    "coscia/evasive": [
+     94,
+     136
+    ],
+    "lebental": [
+     80,
+     130
+    ],
+    "lebental/evasive": [
+     18,
+     54
+    ],
+    "oystacher": [
+     477,
+     489
+    ],
+    "oystacher/evasive": [
+     161,
+     191
+    ],
+    "sarao": [
+     48,
+     48
+    ],
+    "sarao/evasive": [
+     3,
+     25
+    ]
+   },
+   "cases": 283,
+   "false_cases": {
+    "mm": 60,
+    "exec": 18,
+    "prop": 12
+   },
+   "false_cases_total": 90,
+   "instances": 17030,
+   "false_instances": 15195,
+   "sessions": 30,
+   "name": "fixed k=0.02",
+   "false_cases_per_100_legit_account_sessions": 16.67,
+   "cases_per_session": 9.43,
+   "recall_faithful": 0.85,
+   "recall_evasive": 0.502
+  },
+  {
+   "recall": {
+    "chen": [
+     434,
+     618
+    ],
+    "chen/evasive": [
+     43,
+     242
+    ],
+    "coscia": [
+     327,
+     333
+    ],
+    "coscia/evasive": [
+     93,
+     136
+    ],
+    "lebental": [
+     70,
+     130
+    ],
+    "lebental/evasive": [
+     14,
+     54
+    ],
+    "oystacher": [
+     477,
+     489
+    ],
+    "oystacher/evasive": [
+     160,
+     191
+    ],
+    "sarao": [
+     48,
+     48
+    ],
+    "sarao/evasive": [
+     3,
+     25
+    ]
+   },
+   "cases": 262,
+   "false_cases": {
+    "mm": 60,
+    "exec": 16,
+    "prop": 6
+   },
+   "false_cases_total": 82,
+   "instances": 14167,
+   "false_instances": 12364,
+   "sessions": 30,
+   "name": "fixed k=0.05",
+   "false_cases_per_100_legit_account_sessions": 15.19,
+   "cases_per_session": 8.73,
+   "recall_faithful": 0.838,
+   "recall_evasive": 0.483
+  },
+  {
+   "recall": {
+    "chen": [
+     408,
+     618
+    ],
+    "chen/evasive": [
+     28,
+     242
+    ],
+    "coscia": [
+     325,
+     333
+    ],
+    "coscia/evasive": [
+     82,
+     136
+    ],
+    "lebental": [
+     60,
+     130
+    ],
+    "lebental/evasive": [
+     10,
+     54
+    ],
+    "oystacher": [
+     476,
+     489
+    ],
+    "oystacher/evasive": [
+     154,
+     191
+    ],
+    "sarao": [
+     48,
+     48
+    ],
+    "sarao/evasive": [
+     3,
+     25
+    ]
+   },
+   "cases": 248,
+   "false_cases": {
+    "mm": 60,
+    "exec": 8,
+    "prop": 5
+   },
+   "false_cases_total": 73,
+   "instances": 6462,
+   "false_instances": 4738,
+   "sessions": 30,
+   "name": "fixed k=0.1",
+   "false_cases_per_100_legit_account_sessions": 13.52,
+   "cases_per_session": 8.27,
+   "recall_faithful": 0.814,
+   "recall_evasive": 0.427
+  },
+  {
+   "recall": {
+    "chen": [
+     301,
+     618
+    ],
+    "chen/evasive": [
+     11,
+     242
+    ],
+    "coscia": [
+     305,
+     333
+    ],
+    "coscia/evasive": [
+     48,
+     136
+    ],
+    "lebental": [
+     41,
+     130
+    ],
+    "lebental/evasive": [
+     0,
+     54
+    ],
+    "oystacher": [
+     471,
+     489
+    ],
+    "oystacher/evasive": [
+     103,
+     191
+    ],
+    "sarao": [
+     48,
+     48
+    ],
+    "sarao/evasive": [
+     3,
+     25
+    ]
+   },
+   "cases": 165,
+   "false_cases": {
+    "mm": 6
+   },
+   "false_cases_total": 6,
+   "instances": 1523,
+   "false_instances": 89,
+   "sessions": 30,
+   "name": "fixed k=0.2",
+   "false_cases_per_100_legit_account_sessions": 1.11,
+   "cases_per_session": 5.5,
+   "recall_faithful": 0.721,
+   "recall_evasive": 0.255
+  },
+  {
+   "recall": {
+    "chen": [
+     140,
+     618
+    ],
+    "chen/evasive": [
+     4,
+     242
+    ],
+    "coscia": [
+     262,
+     333
+    ],
+    "coscia/evasive": [
+     25,
+     136
+    ],
+    "lebental": [
+     27,
+     130
+    ],
+    "lebental/evasive": [
+     0,
+     54
+    ],
+    "oystacher": [
+     451,
+     489
+    ],
+    "oystacher/evasive": [
+     53,
+     191
+    ],
+    "sarao": [
+     48,
+     48
+    ],
+    "sarao/evasive": [
+     3,
+     25
+    ]
+   },
+   "cases": 132,
+   "false_cases": {},
+   "false_cases_total": 0,
+   "instances": 1096,
+   "false_instances": 8,
+   "sessions": 30,
+   "name": "fixed k=0.3",
+   "false_cases_per_100_legit_account_sessions": 0.0,
+   "cases_per_session": 4.4,
+   "recall_faithful": 0.574,
+   "recall_evasive": 0.131
+  },
+  {
+   "recall": {
+    "chen": [
+     10,
+     618
+    ],
+    "chen/evasive": [
+     0,
+     242
+    ],
+    "coscia": [
+     154,
+     333
+    ],
+    "coscia/evasive": [
+     4,
+     136
+    ],
+    "lebental": [
+     7,
+     130
+    ],
+    "lebental/evasive": [
+     0,
+     54
+    ],
+    "oystacher": [
+     339,
+     489
+    ],
+    "oystacher/evasive": [
+     2,
+     191
+    ],
+    "sarao": [
+     48,
+     48
+    ],
+    "sarao/evasive": [
+     3,
+     25
+    ]
+   },
+   "cases": 89,
+   "false_cases": {},
+   "false_cases_total": 0,
+   "instances": 596,
+   "false_instances": 1,
+   "sessions": 30,
+   "name": "fixed k=0.5",
+   "false_cases_per_100_legit_account_sessions": 0.0,
+   "cases_per_session": 2.97,
+   "recall_faithful": 0.345,
+   "recall_evasive": 0.014
+  },
+  {
+   "recall": {
+    "chen": [
+     0,
+     618
+    ],
+    "chen/evasive": [
+     0,
+     242
+    ],
+    "coscia": [
+     6,
+     333
+    ],
+    "coscia/evasive": [
+     0,
+     136
+    ],
+    "lebental": [
+     0,
+     130
+    ],
+    "lebental/evasive": [
+     0,
+     54
+    ],
+    "oystacher": [
+     92,
+     489
+    ],
+    "oystacher/evasive": [
+     0,
+     191
+    ],
+    "sarao": [
+     48,
+     48
+    ],
+    "sarao/evasive": [
+     3,
+     25
+    ]
+   },
+   "cases": 48,
+   "false_cases": {},
+   "false_cases_total": 0,
+   "instances": 153,
+   "false_instances": 0,
+   "sessions": 30,
+   "name": "fixed k=1.0",
+   "false_cases_per_100_legit_account_sessions": 0.0,
+   "cases_per_session": 1.6,
+   "recall_faithful": 0.09,
+   "recall_evasive": 0.005
+  },
+  {
+   "recall": {
+    "chen": [
+     0,
+     618
+    ],
+    "chen/evasive": [
+     0,
+     242
+    ],
+    "coscia": [
+     0,
+     333
+    ],
+    "coscia/evasive": [
+     0,
+     136
+    ],
+    "lebental": [
+     0,
+     130
+    ],
+    "lebental/evasive": [
+     0,
+     54
+    ],
+    "oystacher": [
+     0,
+     489
+    ],
+    "oystacher/evasive": [
+     0,
+     191
+    ],
+    "sarao": [
+     48,
+     48
+    ],
+    "sarao/evasive": [
+     3,
+     25
+    ]
+   },
+   "cases": 25,
+   "false_cases": {},
+   "false_cases_total": 0,
+   "instances": 55,
+   "false_instances": 0,
+   "sessions": 30,
+   "name": "fixed k=2.0",
+   "false_cases_per_100_legit_account_sessions": 0.0,
+   "cases_per_session": 0.83,
+   "recall_faithful": 0.03,
+   "recall_evasive": 0.005
+  }
+ ],
+ "self_quantile": {
+  "recall": {
+   "chen": [
+    12,
+    618
+   ],
+   "chen/evasive": [
+    0,
+    242
+   ],
+   "coscia": [
+    0,
+    333
+   ],
+   "coscia/evasive": [
+    0,
+    136
+   ],
+   "lebental": [
+    6,
+    130
+   ],
+   "lebental/evasive": [
+    0,
+    54
+   ],
+   "oystacher": [
+    13,
+    489
+   ],
+   "oystacher/evasive": [
+    0,
+    191
+   ],
+   "sarao": [
+    48,
+    48
+   ],
+   "sarao/evasive": [
+    3,
+    25
+   ]
+  },
+  "cases": 35,
+  "false_cases": {},
+  "false_cases_total": 0,
+  "instances": 87,
+  "false_instances": 0,
+  "sessions": 30,
+  "name": "self-quantile 99.5%",
+  "false_cases_per_100_legit_account_sessions": 0.0,
+  "cases_per_session": 1.17,
+  "recall_faithful": 0.049,
+  "recall_evasive": 0.005,
+  "k": {
+   "BASIS_1": 6.143,
+   "BASIS_2": 15.5,
+   "DISC_1": 0.361,
+   "DISC_2": 0.345,
+   "DISC_3": 0.325,
+   "DISC_4": 0.338,
+   "DISC_5": 0.344,
+   "DISC_6": 0.301,
+   "DISC_7": 0.331,
+   "DISC_8": 0.351,
+   "EXEC_1": 0.488,
+   "EXEC_2": 0.436,
+   "EXEC_3": 0.452,
+   "MM_FAST_1": 0.476,
+   "MM_LADDER": 0.554,
+   "MM_SKEW_FAST": 0.517,
+   "MM_SKEW_SLOW_1": 0.289,
+   "MM_SKEW_SLOW_2": 0.227,
+   "M_CHEN_HI": 0.671,
+   "M_CHEN_LO": 0.452,
+   "M_COSCIA": 1.691,
+   "M_LEB": 0.776,
+   "M_MM_CHEN": 0.424,
+   "M_MM_LEB": 0.54,
+   "M_OYST": 1.362,
+   "M_SARAO": 0.379
+  }
+ },
+ "class_k": {
+  "recall": {
+   "chen": [
+    340,
+    618
+   ],
+   "chen/evasive": [
+    17,
+    242
+   ],
+   "coscia": [
+    325,
+    333
+   ],
+   "coscia/evasive": [
+    82,
+    136
+   ],
+   "lebental": [
+    46,
+    130
+   ],
+   "lebental/evasive": [
+    5,
+    54
+   ],
+   "oystacher": [
+    476,
+    489
+   ],
+   "oystacher/evasive": [
+    154,
+    191
+   ],
+   "sarao": [
+    48,
+    48
+   ],
+   "sarao/evasive": [
+    3,
+    25
+   ]
+  },
+  "cases": 160,
+  "false_cases": {
+   "prop": 5
+  },
+  "false_cases_total": 5,
+  "instances": 1687,
+  "false_instances": 80,
+  "sessions": 30,
+  "name": "per-class k from seeded baseline",
+  "false_cases_per_100_legit_account_sessions": 0.93,
+  "cases_per_session": 5.33,
+  "recall_faithful": 0.763,
+  "recall_evasive": 0.403,
+  "k_by_class": {
+   "basis": 0.02,
+   "exec": 0.2,
+   "mm": 0.3,
+   "prop": 0.1
+  }
+ },
+ "ablations": [
+  {
+   "recall": {
+    "chen": [
+     340,
+     618
+    ],
+    "chen/evasive": [
+     17,
+     242
+    ],
+    "coscia": [
+     325,
+     333
+    ],
+    "coscia/evasive": [
+     82,
+     136
+    ],
+    "lebental": [
+     46,
+     130
+    ],
+    "lebental/evasive": [
+     5,
+     54
+    ],
+    "oystacher": [
+     476,
+     489
+    ],
+    "oystacher/evasive": [
+     154,
+     191
+    ],
+    "sarao": [
+     48,
+     48
+    ],
+    "sarao/evasive": [
+     3,
+     25
+    ]
+   },
+   "cases": 160,
+   "false_cases": {
+    "prop": 5
+   },
+   "false_cases_total": 5,
+   "instances": 1687,
+   "false_instances": 80,
+   "sessions": 30,
+   "name": "per-class k (reference)",
+   "false_cases_per_100_legit_account_sessions": 0.93,
+   "cases_per_session": 5.33,
+   "recall_faithful": 0.763,
+   "recall_evasive": 0.403
+  },
+  {
+   "recall": {
+    "chen": [
+     340,
+     618
+    ],
+    "chen/evasive": [
+     17,
+     242
+    ],
+    "coscia": [
+     325,
+     333
+    ],
+    "coscia/evasive": [
+     82,
+     136
+    ],
+    "lebental": [
+     46,
+     130
+    ],
+    "lebental/evasive": [
+     5,
+     54
+    ],
+    "oystacher": [
+     1,
+     489
+    ],
+    "oystacher/evasive": [
+     3,
+     191
+    ],
+    "sarao": [
+     48,
+     48
+    ],
+    "sarao/evasive": [
+     3,
+     25
+    ]
+   },
+   "cases": 133,
+   "false_cases": {
+    "prop": 5
+   },
+   "false_cases_total": 5,
+   "instances": 1051,
+   "false_instances": 70,
+   "sessions": 30,
+   "name": "no flip extension",
+   "false_cases_per_100_legit_account_sessions": 0.93,
+   "cases_per_session": 4.43,
+   "recall_faithful": 0.47,
+   "recall_evasive": 0.17
+  },
+  {
+   "recall": {
+    "chen": [
+     340,
+     618
+    ],
+    "chen/evasive": [
+     17,
+     242
+    ],
+    "coscia": [
+     325,
+     333
+    ],
+    "coscia/evasive": [
+     82,
+     136
+    ],
+    "lebental": [
+     46,
+     130
+    ],
+    "lebental/evasive": [
+     5,
+     54
+    ],
+    "oystacher": [
+     476,
+     489
+    ],
+    "oystacher/evasive": [
+     154,
+     191
+    ],
+    "sarao": [
+     0,
+     48
+    ],
+    "sarao/evasive": [
+     0,
+     25
+    ]
+   },
+   "cases": 135,
+   "false_cases": {
+    "prop": 5
+   },
+   "false_cases_total": 5,
+   "instances": 1632,
+   "false_instances": 80,
+   "sessions": 30,
+   "name": "no persistent-layering extension",
+   "false_cases_per_100_legit_account_sessions": 0.93,
+   "cases_per_session": 4.5,
+   "recall_faithful": 0.734,
+   "recall_evasive": 0.398
+  },
+  {
+   "recall": {
+    "chen": [
+     340,
+     618
+    ],
+    "chen/evasive": [
+     17,
+     242
+    ],
+    "coscia": [
+     325,
+     333
+    ],
+    "coscia/evasive": [
+     82,
+     136
+    ],
+    "lebental": [
+     0,
+     130
+    ],
+    "lebental/evasive": [
+     0,
+     54
+    ],
+    "oystacher": [
+     476,
+     489
+    ],
+    "oystacher/evasive": [
+     154,
+     191
+    ],
+    "sarao": [
+     48,
+     48
+    ],
+    "sarao/evasive": [
+     3,
+     25
+    ]
+   },
+   "cases": 145,
+   "false_cases": {
+    "prop": 5
+   },
+   "false_cases_total": 5,
+   "instances": 1626,
+   "false_instances": 72,
+   "sessions": 30,
+   "name": "no cross-instrument alignment",
+   "false_cases_per_100_legit_account_sessions": 0.93,
+   "cases_per_session": 4.83,
+   "recall_faithful": 0.735,
+   "recall_evasive": 0.395
+  },
+  {
+   "recall": {
+    "chen": [
+     353,
+     618
+    ],
+    "chen/evasive": [
+     18,
+     242
+    ],
+    "coscia": [
+     331,
+     333
+    ],
+    "coscia/evasive": [
+     98,
+     136
+    ],
+    "lebental": [
+     49,
+     130
+    ],
+    "lebental/evasive": [
+     5,
+     54
+    ],
+    "oystacher": [
+     478,
+     489
+    ],
+    "oystacher/evasive": [
+     156,
+     191
+    ],
+    "sarao": [
+     48,
+     48
+    ],
+    "sarao/evasive": [
+     3,
+     25
+    ]
+   },
+   "cases": 225,
+   "false_cases": {
+    "exec": 1,
+    "basis": 60,
+    "prop": 6,
+    "mm": 1
+   },
+   "false_cases_total": 68,
+   "instances": 2995,
+   "false_instances": 1329,
+   "sessions": 30,
+   "name": "no exclusions",
+   "false_cases_per_100_legit_account_sessions": 12.59,
+   "cases_per_session": 7.5,
+   "recall_faithful": 0.778,
+   "recall_evasive": 0.432
+  },
+  {
+   "recall": {
+    "chen": [
+     434,
+     618
+    ],
+    "chen/evasive": [
+     43,
+     242
+    ],
+    "coscia": [
+     327,
+     333
+    ],
+    "coscia/evasive": [
+     93,
+     136
+    ],
+    "lebental": [
+     70,
+     130
+    ],
+    "lebental/evasive": [
+     14,
+     54
+    ],
+    "oystacher": [
+     477,
+     489
+    ],
+    "oystacher/evasive": [
+     160,
+     191
+    ],
+    "sarao": [
+     48,
+     48
+    ],
+    "sarao/evasive": [
+     3,
+     25
+    ]
+   },
+   "cases": 262,
+   "false_cases": {
+    "mm": 60,
+    "exec": 16,
+    "prop": 6
+   },
+   "false_cases_total": 82,
+   "instances": 14167,
+   "false_instances": 12364,
+   "sessions": 30,
+   "name": "fixed k=0.05 (for comparison)",
+   "false_cases_per_100_legit_account_sessions": 15.19,
+   "cases_per_session": 8.73,
+   "recall_faithful": 0.838,
+   "recall_evasive": 0.483
+  },
+  {
+   "recall": {
+    "chen": [
+     456,
+     618
+    ],
+    "chen/evasive": [
+     49,
+     242
+    ],
+    "coscia": [
+     333,
+     333
+    ],
+    "coscia/evasive": [
+     126,
+     136
+    ],
+    "lebental": [
+     96,
+     130
+    ],
+    "lebental/evasive": [
+     19,
+     54
+    ],
+    "oystacher": [
+     480,
+     489
+    ],
+    "oystacher/evasive": [
+     162,
+     191
+    ],
+    "sarao": [
+     48,
+     48
+    ],
+    "sarao/evasive": [
+     3,
+     25
+    ]
+   },
+   "cases": 454,
+   "false_cases": {
+    "mm": 150,
+    "exec": 37,
+    "basis": 60,
+    "prop": 7,
+    "manip-acct": 3
+   },
+   "false_cases_total": 257,
+   "instances": 48110,
+   "false_instances": 46174,
+   "sessions": 30,
+   "name": "fixed k=0.05, no exclusions",
+   "false_cases_per_100_legit_account_sessions": 47.04,
+   "cases_per_session": 15.13,
+   "recall_faithful": 0.873,
+   "recall_evasive": 0.554
+  },
+  {
+   "recall": {
+    "chen": [
+     367,
+     618
+    ],
+    "chen/evasive": [
+     19,
+     242
+    ],
+    "coscia": [
+     325,
+     333
+    ],
+    "coscia/evasive": [
+     82,
+     136
+    ],
+    "lebental": [
+     89,
+     130
+    ],
+    "lebental/evasive": [
+     6,
+     54
+    ],
+    "oystacher": [
+     476,
+     489
+    ],
+    "oystacher/evasive": [
+     154,
+     191
+    ],
+    "sarao": [
+     48,
+     48
+    ],
+    "sarao/evasive": [
+     3,
+     25
+    ]
+   },
+   "cases": 353,
+   "false_cases": {
+    "exec": 32,
+    "prop": 88,
+    "basis": 10,
+    "mm": 5,
+    "manip-acct": 6
+   },
+   "false_cases_total": 141,
+   "instances": 1948,
+   "false_instances": 263,
+   "sessions": 30,
+   "name": "repetition n=1",
+   "false_cases_per_100_legit_account_sessions": 25.0,
+   "cases_per_session": 11.77,
+   "recall_faithful": 0.807,
+   "recall_evasive": 0.407
+  },
+  {
+   "recall": {
+    "chen": [
+     364,
+     618
+    ],
+    "chen/evasive": [
+     19,
+     242
+    ],
+    "coscia": [
+     325,
+     333
+    ],
+    "coscia/evasive": [
+     82,
+     136
+    ],
+    "lebental": [
+     87,
+     130
+    ],
+    "lebental/evasive": [
+     6,
+     54
+    ],
+    "oystacher": [
+     476,
+     489
+    ],
+    "oystacher/evasive": [
+     154,
+     191
+    ],
+    "sarao": [
+     48,
+     48
+    ],
+    "sarao/evasive": [
+     3,
+     25
+    ]
+   },
+   "cases": 286,
+   "false_cases": {
+    "exec": 13,
+    "prop": 58,
+    "basis": 1,
+    "manip-acct": 6
+   },
+   "false_cases_total": 78,
+   "instances": 1874,
+   "false_instances": 195,
+   "sessions": 30,
+   "name": "repetition 3 within 5 sessions",
+   "false_cases_per_100_legit_account_sessions": 13.33,
+   "cases_per_session": 9.53,
+   "recall_faithful": 0.803,
+   "recall_evasive": 0.407
+  }
+ ],
+ "ranking": {
+  "train_candidates": 103134,
+  "train_true": 2253,
+  "test_candidates": 104738,
+  "test_true": 2280,
+  "average_precision": {
+   "model": 0.995,
+   "by_imbalance_ratio": 0.658,
+   "by_size_asymmetry": 0.22
+  },
+  "top_n_per_session": {
+   "model": {
+    "5": {
+     "recall_faithful": 0.082,
+     "recall_all": 0.066,
+     "precision": 1.0
+    },
+    "10": {
+     "recall_faithful": 0.165,
+     "recall_all": 0.133,
+     "precision": 1.0
+    },
+    "20": {
+     "recall_faithful": 0.313,
+     "recall_all": 0.257,
+     "precision": 1.0
+    },
+    "40": {
+     "recall_faithful": 0.59,
+     "recall_all": 0.505,
+     "precision": 1.0
+    }
+   },
+   "by_imbalance_ratio": {
+    "5": {
+     "recall_faithful": 0.08,
+     "recall_all": 0.057,
+     "precision": 0.947
+    },
+    "10": {
+     "recall_faithful": 0.166,
+     "recall_all": 0.119,
+     "precision": 0.96
+    },
+    "20": {
+     "recall_faithful": 0.323,
+     "recall_all": 0.234,
+     "precision": 0.918
+    },
+    "40": {
+     "recall_faithful": 0.555,
+     "recall_all": 0.424,
+     "precision": 0.843
+    }
+   },
+   "by_size_asymmetry": {
+    "5": {
+     "recall_faithful": 0.057,
+     "recall_all": 0.044,
+     "precision": 0.84
+    },
+    "10": {
+     "recall_faithful": 0.105,
+     "recall_all": 0.081,
+     "precision": 0.74
+    },
+    "20": {
+     "recall_faithful": 0.19,
+     "recall_all": 0.15,
+     "precision": 0.675
+    },
+    "40": {
+     "recall_faithful": 0.273,
+     "recall_all": 0.219,
+     "precision": 0.485
+    }
+   }
+  },
+  "rule_instances_per_session": 54.4,
+  "rule_at_its_own_volume": {
+   "recall_faithful": 0.756,
+   "recall_all": 0.659,
+   "precision": 0.951
+  },
+  "model_at_rule_volume": {
+   "N": 54,
+   "recall_faithful": 0.771,
+   "recall_all": 0.676,
+   "precision": 1.0
+  }
+ },
+ "degradation_chen": {
+  "latency": [
+   {
+    "bin": "0-1",
+    "n": 98,
+    "rule": 0.714,
+    "model": 0.684
+   },
+   {
+    "bin": "1-2.5",
+    "n": 174,
+    "rule": 0.598,
+    "model": 0.592
+   },
+   {
+    "bin": "2.5-5",
+    "n": 302,
+    "rule": 0.586,
+    "model": 0.543
+   },
+   {
+    "bin": "5-10",
+    "n": 142,
+    "rule": 0.028,
+    "model": 0.289
+   },
+   {
+    "bin": "10-20",
+    "n": 144,
+    "rule": 0.014,
+    "model": 0.139
+   }
+  ],
+  "spoof_qty": [
+   {
+    "bin": "0-15",
+    "n": 73,
+    "rule": 0.014,
+    "model": 0.041
+   },
+   {
+    "bin": "15-30",
+    "n": 88,
+    "rule": 0.011,
+    "model": 0.091
+   },
+   {
+    "bin": "30-50",
+    "n": 193,
+    "rule": 0.316,
+    "model": 0.259
+   },
+   {
+    "bin": "50-80",
+    "n": 174,
+    "rule": 0.511,
+    "model": 0.511
+   },
+   {
+    "bin": "80-200",
+    "n": 332,
+    "rule": 0.617,
+    "model": 0.738
+   }
+  ]
+ },
+ "leave_one_template_out": {
+  "chen": {
+   "n": 618,
+   "model_never_shown_this_template": 0.43,
+   "model_trained_on_all": 0.574,
+   "rule": 0.55
+  },
+  "coscia": {
+   "n": 333,
+   "model_never_shown_this_template": 0.616,
+   "model_trained_on_all": 0.919,
+   "rule": 0.976
+  },
+  "oystacher": {
+   "n": 489,
+   "model_never_shown_this_template": 0.364,
+   "model_trained_on_all": 0.961,
+   "rule": 0.973
+  },
+  "lebental": {
+   "n": 130,
+   "model_never_shown_this_template": 0.131,
+   "model_trained_on_all": 0.615,
+   "rule": 0.354
+  }
+ }
+}
