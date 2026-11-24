@@ -10,6 +10,8 @@ Paper: Allen Yilun Li, "Calibrating Spoofing and Layering Surveillance Without L
 A Seeded Benchmark on Simulated and Recorded Futures Order Books" (2026).
 SSRN: https://papers.ssrn.com/abstract=7747058
 
+Maintained by Auspex Surveillance, Inc.: https://auspexsurveillance.com
+
 ## Main results
 
 Measured on held-out sessions of a simulated market and of recorded CME order-by-order data for
@@ -139,6 +141,7 @@ results files hold aggregate statistics only.
 
 If you run the benchmark against your own detector or data, please open a "Usage report" issue and say
 what you ran and what you found. Reports of things that break are as useful as results.
+You can also write to hello@auspexsurveillance.com.
 
 ## Citation
 
