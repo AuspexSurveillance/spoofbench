@@ -1,0 +1,224 @@
+{
+ "meta": {
+  "sessions": 3,
+  "seed": 20261123,
+  "orders": 64433,
+  "cat_events": 179532,
+  "per_type_per_session": 200,
+  "assumptions": {
+   "scenario": "agency firm; every order is routed to one exchange; executions are reported by the exchange",
+   "route latency": "exchange acknowledgement arrives 0.2 to 2.0 ms after the route, uniform",
+   "timestamps": "reported in milliseconds",
+   "timing window": "a route or cancel timestamp is accepted if the acknowledgement follows it by -1.0 to +3.5 ms",
+   "account holder type": "taken from the account master by account class",
+   "one error per order": "each seeded error is on a different order"
+  }
+ },
+ "errors": {
+  "omit_new_order": {
+   "origin": "report",
+   "description": "MENO not reported",
+   "n": 600,
+   "cat": 600,
+   "oms": 600,
+   "exch": 0,
+   "any": 600
+  },
+  "omit_route": {
+   "origin": "report",
+   "description": "MEOR not reported",
+   "n": 600,
+   "cat": 600,
+   "oms": 600,
+   "exch": 600,
+   "any": 600
+  },
+  "omit_cancel": {
+   "origin": "report",
+   "description": "MEOC not reported",
+   "n": 600,
+   "cat": 0,
+   "oms": 600,
+   "exch": 600,
+   "any": 600
+  },
+  "dup_order_key": {
+   "origin": "report",
+   "description": "orderID reused for a second order on the same day",
+   "n": 1200,
+   "cat": 1200,
+   "oms": 1200,
+   "exch": 600,
+   "any": 1200
+  },
+  "dup_roe_id": {
+   "origin": "report",
+   "description": "firmROEID reused",
+   "n": 600,
+   "cat": 600,
+   "oms": 600,
+   "exch": 0,
+   "any": 600
+  },
+  "missing_aht": {
+   "origin": "report",
+   "description": "accountHolderType missing",
+   "n": 600,
+   "cat": 600,
+   "oms": 600,
+   "exch": 0,
+   "any": 600
+  },
+  "bad_timestamp": {
+   "origin": "report",
+   "description": "eventTimestamp not a valid time",
+   "n": 600,
+   "cat": 600,
+   "oms": 600,
+   "exch": 0,
+   "any": 600
+  },
+  "wrong_routed_id": {
+   "origin": "report",
+   "description": "routedOrderID does not match what was sent",
+   "n": 600,
+   "cat": 600,
+   "oms": 600,
+   "exch": 600,
+   "any": 600
+  },
+  "wrong_session": {
+   "origin": "report",
+   "description": "session does not match what was sent",
+   "n": 600,
+   "cat": 600,
+   "oms": 600,
+   "exch": 600,
+   "any": 600
+  },
+  "out_of_sequence": {
+   "origin": "report",
+   "description": "cancel timestamp earlier than the new order",
+   "n": 600,
+   "cat": 600,
+   "oms": 600,
+   "exch": 600,
+   "any": 600
+  },
+  "fdid_unknown": {
+   "origin": "report",
+   "description": "firmDesignatedID not in the firm's reference data",
+   "n": 600,
+   "cat": 600,
+   "oms": 600,
+   "exch": 0,
+   "any": 600
+  },
+  "fdid_pending": {
+   "origin": "upstream",
+   "description": "firmDesignatedID still PENDING in the account master",
+   "n": 600,
+   "cat": 600,
+   "oms": 600,
+   "exch": 0,
+   "any": 600
+  },
+  "wrong_side": {
+   "origin": "report",
+   "description": "side reported as the opposite side",
+   "n": 600,
+   "cat": 0,
+   "oms": 600,
+   "exch": 600,
+   "any": 600
+  },
+  "wrong_qty": {
+   "origin": "report",
+   "description": "quantity reported is not the order quantity",
+   "n": 600,
+   "cat": 0,
+   "oms": 600,
+   "exch": 600,
+   "any": 600
+  },
+  "wrong_price": {
+   "origin": "report",
+   "description": "price reported is off by a factor of 100",
+   "n": 600,
+   "cat": 0,
+   "oms": 600,
+   "exch": 600,
+   "any": 600
+  },
+  "ts_truncated": {
+   "origin": "report",
+   "description": "timestamps truncated to the second",
+   "n": 600,
+   "cat": 0,
+   "oms": 600,
+   "exch": 600,
+   "any": 600
+  },
+  "clock_drift": {
+   "origin": "upstream",
+   "description": "order host clock ahead by a fixed offset",
+   "n": 600,
+   "cat": 0,
+   "oms": 0,
+   "exch": 600,
+   "any": 600
+  },
+  "wrong_aht_report": {
+   "origin": "report",
+   "description": "accountHolderType differs from the account master",
+   "n": 600,
+   "cat": 0,
+   "oms": 600,
+   "exch": 0,
+   "any": 600
+  },
+  "wrong_aht_master": {
+   "origin": "upstream",
+   "description": "accountHolderType wrong in the account master",
+   "n": 600,
+   "cat": 0,
+   "oms": 0,
+   "exch": 0,
+   "any": 0
+  }
+ },
+ "false_flags": {
+  "cat": 0,
+  "oms": 0,
+  "exch": 0,
+  "cat_seeded_file": 0,
+  "oms_seeded_file": 0,
+  "exch_seeded_file": 0
+ },
+ "drift_sweep": {
+  "1 ms": [
+   35,
+   600
+  ],
+  "2 ms": [
+   416,
+   600
+  ],
+  "3 ms": [
+   598,
+   600
+  ],
+  "5 ms": [
+   600,
+   600
+  ],
+  "20 ms": [
+   600,
+   600
+  ],
+  "50 ms": [
+   600,
+   600
+  ]
+ }
+}

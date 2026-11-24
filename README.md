@@ -96,6 +96,22 @@ templates above and every number in the paper stay exactly reproducible:
 Findings and limits: `FINDINGS_EQ.md`. Quoted facts and assumptions: `SOURCES_EQ` in
 `spoofbench/equities.py`. These templates run on the simulated market only.
 
+## catrecon: seeded CAT reporting errors
+
+A second study that reuses the simulated sessions as a broker's order records. It writes the CAT events
+the firm would report, plants 19 kinds of labelled reporting error, and scores three controls: the CAT
+feedback checks described in the public Industry Member specification, reconciliation against the firm's
+own records, and reconciliation against exchange acknowledgements.
+
+    cd catrecon
+    python catrecon.py                  # coverage of each error kind by each control; writes results/results.json
+    python extras.py                    # error rate shown, sampled review, clock offsets; writes results/extras.json
+    python make_figs.py                 # figures (needs matplotlib)
+
+Paper: Allen Yilun Li, "What CAT Feedback Cannot See: A Seeded Test of Three Controls for Consolidated
+Audit Trail Reporting Errors" (2026). The CAT checks are a simplified reimplementation from the public
+specification, not the CAT system.
+
 ## Recorded market data
 
     python tools/get_cme_mbo.py                           # needs a Databento account and API key
