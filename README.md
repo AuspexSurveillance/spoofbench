@@ -8,6 +8,7 @@ account class and per instrument on seeded sessions, under a budget on false cas
 
 Paper: Allen Yilun Li, "Calibrating Spoofing and Layering Surveillance Without Labelled Cases:
 A Seeded Benchmark on Simulated and Recorded Futures Order Books" (2026).
+SSRN: https://papers.ssrn.com/abstract=7747058
 
 ## Main results
 
