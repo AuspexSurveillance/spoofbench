@@ -42,6 +42,8 @@ class Params:
     kP: float = 1.0
     T_min: float = 20.0
     k_by_acct: tuple = None  # ((account, k), ...) per-account calibrated multiples
+    flip_fill: bool = True   # apply the fill-ratio test to orders kept by the flip variant
+    f_touch: float = None    # if set, fill-ratio limit for orders entered at or inside the touch
 
 
 
@@ -116,9 +118,13 @@ def evaluate(c, ix, P, kmap=None):
     keep = []
     for o in c["orders"]:
         lat = o.t_out - t
-        if o.dist > P.d or o.filled > P.f_max * o.qty or o.t_in < t - P.W:
+        is_flip = P.flip and lat < 0.0 and gen.aggr
+        f_max = P.f_touch if (P.f_touch is not None and o.dist <= 0) else P.f_max
+        if is_flip and not P.flip_fill:
+            f_max = 1.0
+        if o.dist > P.d or o.filled > f_max * o.qty or o.t_in < t - P.W:
             continue
-        if 0.0 <= lat <= hi or (P.flip and lat < 0.0 and gen.aggr):
+        if 0.0 <= lat <= hi or is_flip:
             keep.append(o)
     if not keep:
         return None

@@ -56,6 +56,7 @@ experiment needs numpy and scikit-learn. A fixed seed (20261123) reproduces ever
     tools/selfq_floor.py     own-percentile calibration with and without a floor
     tools/diag_flip.py       why flip episodes are missed on a thin book
     tools/diag_hold.py       why the Hold Brothers template is missed (extension set)
+    tools/fill_fix.py        test of two changes to the fill-ratio test on recorded-data logs
     tools/make_figures.py    the figure in the paper
     data/sample/             one exported simulated session
 
@@ -117,6 +118,11 @@ results files hold aggregate statistics only.
 - Template parameters that the source documents do not state are assumptions, listed in `SOURCES`.
 - Two contracts, ten trading days. The cross-instrument pattern is tested on the simulated market only.
 - A flagged instance is a pattern that warrants review. It is not a finding of intent.
+
+## If you use it
+
+If you run the benchmark against your own detector or data, please open a "Usage report" issue and say
+what you ran and what you found. Reports of things that break are as useful as results.
 
 ## Citation
 
