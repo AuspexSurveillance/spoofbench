@@ -27,6 +27,10 @@ Design choices were made on development sessions generated from other seeds (see
 4. **Two groups per case**, against three instances for the procedures. One and two gave similar development results; two was steadier on held-out patterns.
 5. **The threshold floor (chosen after a first look at test data).** The first run on the v0.3 test sessions and on ZN used the budget thresholds alone, which came out between 0.03 and 0.11. Results for patterns seen in training were as shown under "no floor" below. In the ZN run with the Chen pattern held out, 61 of 480 legitimate account-sessions were flagged. A floor of 0.2 was then picked on the development sessions (standard roster: false cases fell from 2.04 to 0 per 100 and recall of all attempts from 97.5% to 96.9%) and every run was repeated. Both settings are reported for every run. On held-out patterns the floor costs recall.
 
+## Clean test on days bought afterwards
+
+The detector was frozen and published (commit `d7af04b`) before any October data existed in the project. ESZ6 and ZNZ6 order-by-order data for October 5 to 30, 2026 (20 trading days) was then bought and replayed with the same roster, with session ids offset by 2000 so the simulated accounts draw fresh seeds. Two splits were fixed before any result was read: the first ten October days as baseline with the last ten as test, and all ten November days as baseline with all twenty October days as test. Features, model, the two-group rule, the budget and the 0.2 floor are unchanged. The results are in the four "Clean test" sections below. ES uses the same two windows a day as before.
+
 ## Limits
 
 - The firm's accounts are simulated, on the simulated market and on the recorded books. Firm orders do not move the recorded market. Seeded episodes are more regular than real manipulation, so results for patterns seen in training are flattering for any trained model. The held-out-pattern results and the stress tier are the better guide, and they are synthetic too.
@@ -34,5 +38,5 @@ Design choices were made on development sessions generated from other seeds (see
 - A legitimate account type that was not in the baseline is flagged in most or all of its sessions (stress tier, below). New account types have to be reviewed once and added to the baseline.
 - For a pattern never seen in training the calibration is not settled: budget thresholds keep recall high but did not hold the false-case rate in one of four ZN runs, and the 0.2 floor holds the false-case rate and loses about a third of the attempts on two of the four ZN patterns.
 - Class thresholds rest on at most a few hundred legitimate account-sessions per class. False-case rates on the test sessions rest on a handful of cases, or none.
-- Ten recorded days, two contracts, the cross-instrument pattern not run on recorded data. The model is trained per instrument; carrying a model from one instrument to another is not tested.
+- Thirty recorded days, two contracts, the cross-instrument pattern not run on recorded data. The model is trained per instrument; carrying a model from one instrument to another is not tested.
 - The adaptive family was written by the same author as the detector.

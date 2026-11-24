@@ -27,6 +27,10 @@ Design choices were made on development sessions generated from other seeds (see
 4. **Two groups per case**, against three instances for the procedures. One and two gave similar development results; two was steadier on held-out patterns.
 5. **The threshold floor (chosen after a first look at test data).** The first run on the v0.3 test sessions and on ZN used the budget thresholds alone, which came out between 0.03 and 0.11. Results for patterns seen in training were as shown under "no floor" below. In the ZN run with the Chen pattern held out, 61 of 480 legitimate account-sessions were flagged. A floor of 0.2 was then picked on the development sessions (standard roster: false cases fell from 2.04 to 0 per 100 and recall of all attempts from 97.5% to 96.9%) and every run was repeated. Both settings are reported for every run. On held-out patterns the floor costs recall.
 
+## Clean test on days bought afterwards
+
+The detector was frozen and published (commit `d7af04b`) before any October data existed in the project. ESZ6 and ZNZ6 order-by-order data for October 5 to 30, 2026 (20 trading days) was then bought and replayed with the same roster, with session ids offset by 2000 so the simulated accounts draw fresh seeds. Two splits were fixed before any result was read: the first ten October days as baseline with the last ten as test, and all ten November days as baseline with all twenty October days as test. Features, model, the two-group rule, the budget and the 0.2 floor are unchanged. The results are in the four "Clean test" sections below. ES uses the same two windows a day as before.
+
 ## Limits
 
 - The firm's accounts are simulated, on the simulated market and on the recorded books. Firm orders do not move the recorded market. Seeded episodes are more regular than real manipulation, so results for patterns seen in training are flattering for any trained model. The held-out-pattern results and the stress tier are the better guide, and they are synthetic too.
@@ -34,7 +38,7 @@ Design choices were made on development sessions generated from other seeds (see
 - A legitimate account type that was not in the baseline is flagged in most or all of its sessions (stress tier, below). New account types have to be reviewed once and added to the baseline.
 - For a pattern never seen in training the calibration is not settled: budget thresholds keep recall high but did not hold the false-case rate in one of four ZN runs, and the 0.2 floor holds the false-case rate and loses about a third of the attempts on two of the four ZN patterns.
 - Class thresholds rest on at most a few hundred legitimate account-sessions per class. False-case rates on the test sessions rest on a handful of cases, or none.
-- Ten recorded days, two contracts, the cross-instrument pattern not run on recorded data. The model is trained per instrument; carrying a model from one instrument to another is not tested.
+- Thirty recorded days, two contracts, the cross-instrument pattern not run on recorded data. The model is trained per instrument; carrying a model from one instrument to another is not tested.
 - The adaptive family was written by the same author as the detector.
 
 ## Results
@@ -155,6 +159,158 @@ chen       with the floor     124/291 (42.6%) at 0.0 false cases per 100 | witho
 coscia     with the floor     489/549 (89.1%) at 0.0 false cases per 100 | without     493/549 (89.8%) at 2.5 | threshold read off the test sessions at 1 per 100: 493/549 (89.8%) | procedures 325/549 (59.2%)
 oystacher  with the floor     100/235 (42.6%) at 0.62 false cases per 100 | without     104/235 (44.3%) at 0.62 | threshold read off the test sessions at 1 per 100: 104/235 (44.3%) | procedures 102/235 (43.4%)
 sarao      with the floor       21/26 (80.8%) at 0.62 false cases per 100 | without       22/26 (84.6%) at 1.25 | threshold read off the test sessions at 1 per 100: 25/26 (96.2%) | procedures 18/26 (69.2%)
+```
+
+### Clean test, ZN: first ten October days as baseline, last ten as test
+
+60 baseline and 60 test sessions; 7,546 seeded attempts in the test sessions, 5,499 of them without a fill; 960 legitimate account-sessions.
+
+```
+procedures        all attempts   1,792/7,546 (23.7%) | completed faithful 1,258/1,420 (88.6%) | completed evasive   440/627 (70.2%) | no fill     94/5,499 (1.7%) | false cases 8 of 960 (0.83 per 100)
+learned detector  all attempts   7,503/7,546 (99.4%) | completed faithful 1,413/1,420 (99.5%) | completed evasive   612/627 (97.6%) | no fill 5,478/5,499 (99.6%) | false cases 0 of 960 (0.0 per 100)
+learned, no floor all attempts   7,508/7,546 (99.5%) | completed faithful 1,414/1,420 (99.6%) | completed evasive   614/627 (97.9%) | no fill 5,480/5,499 (99.7%) | false cases 20 of 960 (2.08 per 100)
+```
+
+Flagged groups that contain no seeded order: 52 of 9,549 (learned), 110 of 1,905 (procedures).
+
+At an equal false-case load (one threshold read off the test sessions, comparison only):
+
+```
+at most 0.5 per 100: learned 7,505/7,546 (99.5%) | procedures 1,529/7,546 (20.3%) (k=0.005, 0.31 per 100)
+at most 1.0 per 100: learned 7,506/7,546 (99.5%) | procedures 1,529/7,546 (20.3%) (k=0.005, 0.31 per 100)
+at most 2.0 per 100: learned 7,508/7,546 (99.5%) | procedures 1,792/7,546 (23.7%) (k=0.002, 1.98 per 100)
+```
+
+By pattern, all attempts (completed faithful in brackets):
+
+```
+chen       learned 2,444/2,458 (99.4%) [257/257 (100.0%)] | procedures    156/2,458 (6.3%) [117/257 (45.5%)]
+coscia     learned 3,538/3,538 (100.0%) [132/132 (100.0%)] | procedures    176/3,538 (5.0%) [114/132 (86.4%)]
+oystacher  learned 1,390/1,404 (99.0%) [957/957 (100.0%)] | procedures 1,367/1,404 (97.4%) [953/957 (99.6%)]
+sarao      learned     131/146 (89.7%) [67/74 (90.5%)] | procedures      93/146 (63.7%) [74/74 (100.0%)]
+```
+
+A pattern the detector was never shown (every account that runs it is left out of training and calibration). Recall is over all attempts of that pattern:
+
+```
+chen       with the floor 1,407/2,458 (57.2%) at 0.0 false cases per 100 | without 2,364/2,458 (96.2%) at 2.81 | threshold read off the test sessions at 1 per 100: 2,329/2,458 (94.8%) | procedures 156/2,458 (6.3%)
+coscia     with the floor 3,538/3,538 (100.0%) at 0.0 false cases per 100 | without 3,538/3,538 (100.0%) at 2.19 | threshold read off the test sessions at 1 per 100: 3,538/3,538 (100.0%) | procedures 176/3,538 (5.0%)
+oystacher  with the floor   938/1,404 (66.8%) at 0.0 false cases per 100 | without 1,391/1,404 (99.1%) at 2.08 | threshold read off the test sessions at 1 per 100: 1,389/1,404 (98.9%) | procedures 1,367/1,404 (97.4%)
+sarao      with the floor     131/146 (89.7%) at 0.0 false cases per 100 | without     144/146 (98.6%) at 2.81 | threshold read off the test sessions at 1 per 100: 133/146 (91.1%) | procedures 93/146 (63.7%)
+```
+
+### Clean test, ZN: November 2 to 13 as baseline, October 5 to 30 as test
+
+60 baseline and 120 test sessions; 15,159 seeded attempts in the test sessions, 11,142 of them without a fill; 1920 legitimate account-sessions.
+
+```
+procedures        all attempts  3,505/15,159 (23.1%) | completed faithful 2,474/2,828 (87.5%) | completed evasive 832/1,189 (70.0%) | no fill   199/11,142 (1.8%) | false cases 6 of 1920 (0.31 per 100)
+learned detector  all attempts 15,073/15,159 (99.4%) | completed faithful 2,811/2,828 (99.4%) | completed evasive 1,165/1,189 (98.0%) | no fill 11,097/11,142 (99.6%) | false cases 0 of 1920 (0.0 per 100)
+learned, no floor all attempts 15,092/15,159 (99.6%) | completed faithful 2,816/2,828 (99.6%) | completed evasive 1,168/1,189 (98.2%) | no fill 11,108/11,142 (99.7%) | false cases 49 of 1920 (2.55 per 100)
+```
+
+Flagged groups that contain no seeded order: 121 of 19,351 (learned), 116 of 3,628 (procedures).
+
+At an equal false-case load (one threshold read off the test sessions, comparison only):
+
+```
+at most 0.5 per 100: learned 15,078/15,159 (99.5%) | procedures 3,035/15,159 (20.0%) (k=0.005, 0.26 per 100)
+at most 1.0 per 100: learned 15,082/15,159 (99.5%) | procedures 3,035/15,159 (20.0%) (k=0.005, 0.26 per 100)
+at most 2.0 per 100: learned 15,088/15,159 (99.5%) | procedures 3,551/15,159 (23.4%) (k=0.002, 1.35 per 100)
+```
+
+By pattern, all attempts (completed faithful in brackets):
+
+```
+chen       learned 4,954/4,982 (99.4%) [468/470 (99.6%)] | procedures    240/4,982 (4.8%) [162/470 (34.5%)]
+coscia     learned 7,103/7,103 (100.0%) [268/268 (100.0%)] | procedures    358/7,103 (5.0%) [233/268 (86.9%)]
+oystacher  learned 2,769/2,793 (99.1%) [1,949/1,950 (99.9%)] | procedures 2,723/2,793 (97.5%) [1,939/1,950 (99.4%)]
+sarao      learned     247/281 (87.9%) [126/140 (90.0%)] | procedures     184/281 (65.5%) [140/140 (100.0%)]
+```
+
+A pattern the detector was never shown (every account that runs it is left out of training and calibration). Recall is over all attempts of that pattern:
+
+```
+chen       with the floor 3,095/4,982 (62.1%) at 0.0 false cases per 100 | without 4,742/4,982 (95.2%) at 2.5 | threshold read off the test sessions at 1 per 100: 4,724/4,982 (94.8%) | procedures 240/4,982 (4.8%)
+coscia     with the floor 7,103/7,103 (100.0%) at 0.0 false cases per 100 | without 7,103/7,103 (100.0%) at 2.24 | threshold read off the test sessions at 1 per 100: 7,103/7,103 (100.0%) | procedures 358/7,103 (5.0%)
+oystacher  with the floor 1,845/2,793 (66.1%) at 0.0 false cases per 100 | without 2,772/2,793 (99.2%) at 2.55 | threshold read off the test sessions at 1 per 100: 2,768/2,793 (99.1%) | procedures 2,723/2,793 (97.5%)
+sarao      with the floor     247/281 (87.9%) at 0.0 false cases per 100 | without     274/281 (97.5%) at 3.44 | threshold read off the test sessions at 1 per 100: 249/281 (88.6%) | procedures 184/281 (65.5%)
+```
+
+### Clean test, ES (two windows a day): first ten October days as baseline, last ten as test
+
+20 baseline and 20 test sessions; 2,313 seeded attempts in the test sessions, 726 of them without a fill; 320 legitimate account-sessions.
+
+```
+procedures        all attempts   1,085/2,313 (46.9%) | completed faithful   880/1,125 (78.2%) | completed evasive   179/462 (38.7%) | no fill       26/726 (3.6%) | false cases 1 of 320 (0.31 per 100)
+learned detector  all attempts   2,025/2,313 (87.5%) | completed faithful 1,047/1,125 (93.1%) | completed evasive   352/462 (76.2%) | no fill     626/726 (86.2%) | false cases 1 of 320 (0.31 per 100)
+learned, no floor all attempts   2,038/2,313 (88.1%) | completed faithful 1,051/1,125 (93.4%) | completed evasive   356/462 (77.1%) | no fill     631/726 (86.9%) | false cases 9 of 320 (2.81 per 100)
+```
+
+Flagged groups that contain no seeded order: 20 of 2,176 (learned), 188 of 1,276 (procedures).
+
+At an equal false-case load (one threshold read off the test sessions, comparison only):
+
+```
+at most 0.5 per 100: learned 2,025/2,313 (87.5%) | procedures 592/2,313 (25.6%) (k=0.3, 0.0 per 100)
+at most 1.0 per 100: learned 2,034/2,313 (87.9%) | procedures 592/2,313 (25.6%) (k=0.3, 0.0 per 100)
+at most 2.0 per 100: learned 2,035/2,313 (88.0%) | procedures 592/2,313 (25.6%) (k=0.3, 0.0 per 100)
+```
+
+By pattern, all attempts (completed faithful in brackets):
+
+```
+chen       learned     533/645 (82.6%) [296/329 (90.0%)] | procedures     217/645 (33.6%) [186/329 (56.5%)]
+coscia     learned 1,111/1,154 (96.3%) [453/454 (99.8%)] | procedures   570/1,154 (49.4%) [444/454 (97.8%)]
+oystacher  learned     344/474 (72.6%) [273/315 (86.7%)] | procedures     271/474 (57.2%) [223/315 (70.8%)]
+sarao      learned       37/40 (92.5%) [25/27 (92.6%)] | procedures       27/40 (67.5%) [27/27 (100.0%)]
+```
+
+A pattern the detector was never shown (every account that runs it is left out of training and calibration). Recall is over all attempts of that pattern:
+
+```
+chen       with the floor     322/645 (49.9%) at 0.0 false cases per 100 | without     492/645 (76.3%) at 4.69 | threshold read off the test sessions at 1 per 100: 458/645 (71.0%) | procedures 217/645 (33.6%)
+coscia     with the floor 1,111/1,154 (96.3%) at 0.31 false cases per 100 | without 1,111/1,154 (96.3%) at 2.19 | threshold read off the test sessions at 1 per 100: 1,111/1,154 (96.3%) | procedures 570/1,154 (49.4%)
+oystacher  with the floor     233/474 (49.2%) at 0.62 false cases per 100 | without     314/474 (66.2%) at 3.12 | threshold read off the test sessions at 1 per 100: 243/474 (51.3%) | procedures 271/474 (57.2%)
+sarao      with the floor       37/40 (92.5%) at 0.31 false cases per 100 | without      40/40 (100.0%) at 4.06 | threshold read off the test sessions at 1 per 100: 37/40 (92.5%) | procedures 27/40 (67.5%)
+```
+
+### Clean test, ES (two windows a day): November 2 to 13 as baseline, October 5 to 30 as test
+
+20 baseline and 40 test sessions; 4,698 seeded attempts in the test sessions, 1,552 of them without a fill; 640 legitimate account-sessions.
+
+```
+procedures        all attempts   2,191/4,698 (46.6%) | completed faithful 1,763/2,253 (78.3%) | completed evasive   381/893 (42.7%) | no fill     47/1,552 (3.0%) | false cases 29 of 640 (4.53 per 100)
+learned detector  all attempts   4,145/4,698 (88.2%) | completed faithful 2,125/2,253 (94.3%) | completed evasive   673/893 (75.4%) | no fill 1,347/1,552 (86.8%) | false cases 2 of 640 (0.31 per 100)
+learned, no floor all attempts   4,178/4,698 (88.9%) | completed faithful 2,129/2,253 (94.5%) | completed evasive   692/893 (77.5%) | no fill 1,357/1,552 (87.4%) | false cases 41 of 640 (6.41 per 100)
+```
+
+Flagged groups that contain no seeded order: 51 of 4,475 (learned), 753 of 2,953 (procedures).
+
+At an equal false-case load (one threshold read off the test sessions, comparison only):
+
+```
+at most 0.5 per 100: learned 4,155/4,698 (88.4%) | procedures 1,076/4,698 (22.9%) (k=0.3, 0.16 per 100)
+at most 1.0 per 100: learned 4,165/4,698 (88.7%) | procedures 1,076/4,698 (22.9%) (k=0.3, 0.16 per 100)
+at most 2.0 per 100: learned 4,168/4,698 (88.7%) | procedures 1,583/4,698 (33.7%) (k=0.2, 1.88 per 100)
+```
+
+By pattern, all attempts (completed faithful in brackets):
+
+```
+chen       learned 1,113/1,336 (83.3%) [622/676 (92.0%)] | procedures   417/1,336 (31.2%) [362/676 (53.6%)]
+coscia     learned 2,235/2,316 (96.5%) [883/884 (99.9%)] | procedures 1,112/2,316 (48.0%) [867/884 (98.1%)]
+oystacher  learned     721/963 (74.9%) [565/634 (89.1%)] | procedures     601/963 (62.4%) [475/634 (74.9%)]
+sarao      learned       76/83 (91.6%) [55/59 (93.2%)] | procedures       61/83 (73.5%) [59/59 (100.0%)]
+```
+
+A pattern the detector was never shown (every account that runs it is left out of training and calibration). Recall is over all attempts of that pattern:
+
+```
+chen       with the floor   767/1,336 (57.4%) at 0.0 false cases per 100 | without   985/1,336 (73.7%) at 3.59 | threshold read off the test sessions at 1 per 100: 947/1,336 (70.9%) | procedures 417/1,336 (31.2%)
+coscia     with the floor 2,235/2,316 (96.5%) at 0.0 false cases per 100 | without 2,235/2,316 (96.5%) at 4.22 | threshold read off the test sessions at 1 per 100: 2,235/2,316 (96.5%) | procedures 1,112/2,316 (48.0%)
+oystacher  with the floor     492/963 (51.1%) at 0.16 false cases per 100 | without     594/963 (61.7%) at 6.25 | threshold read off the test sessions at 1 per 100: 537/963 (55.8%) | procedures 601/963 (62.4%)
+sarao      with the floor       76/83 (91.6%) at 0.16 false cases per 100 | without       79/83 (95.2%) at 8.91 | threshold read off the test sessions at 1 per 100: 76/83 (91.6%) | procedures 61/83 (73.5%)
 ```
 
 ### Equities templates (v0.4 sessions), never trained on

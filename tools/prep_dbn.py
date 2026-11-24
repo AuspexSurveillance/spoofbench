@@ -8,7 +8,7 @@ Requires: pip install databento numpy
 """
 import sys, os, numpy as np, databento as db
 
-TICK = {"ES": 250_000_000, "ZN": 15_625_000}           # price increment in 1e-9 units
+TICK = {"ES": 250_000_000, "ZN": 15_625_000, "UB": 31_250_000}   # price increment in 1e-9 units
 A, C, M, R, F, T = (ord(x) for x in "ACMRFT")
 EMPTY = (np.zeros(0, np.int64), np.zeros(0, np.int8), np.zeros(0, np.int32), np.zeros(0, np.int32))
 

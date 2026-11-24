@@ -5,6 +5,10 @@ D = sys.argv[1] if len(sys.argv) > 1 else "results_v05"
 TIERS = [("std", "Simulated market, the v0.3 sessions"), ("real_ZN", "ZN, recorded order book"),
          ("real_ES_w14", "ES, recorded order book, the two windows a day used in v0.3"),
          ("real_ES", "ES, recorded order book, all six windows a day"),
+         ("real_ZN_oct", "Clean test, ZN: first ten October days as baseline, last ten as test"),
+         ("real_ZN_nov_to_oct", "Clean test, ZN: November 2 to 13 as baseline, October 5 to 30 as test"),
+         ("real_ES_w14_oct", "Clean test, ES (two windows a day): first ten October days as baseline, last ten as test"),
+         ("real_ES_w14_nov_to_oct", "Clean test, ES (two windows a day): November 2 to 13 as baseline, October 5 to 30 as test"),
          ("eq", "Equities templates (v0.4 sessions), never trained on"), ("stress", "Stress tier")]
 pc = lambda v: f"{v[0]:,}/{v[1]:,} ({100 * v[0] / v[1]:.1f}%)" if v and v[1] else "0/0"
 add = lambda a, b: [a[0] + b[0], a[1] + b[1]]

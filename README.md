@@ -48,6 +48,12 @@ it was developed, every result and the limits. Same sessions, same false-case bu
 - A futures pattern left out of training, share of all its attempts found (simulated / ZN / ES):
   chen 85.0% / 65.6% / 42.6%; coscia 100.0% / 100.0% / 89.1%; oystacher 88.1% / 67.5% / 42.6%;
   sarao 90.4% / 94.2% / 80.8%; lebental 66.0% (simulated only).
+- Clean test on 20 trading days bought after the detector was published (October 5 to 30, 2026; ZN / ES).
+  First ten October days as baseline, last ten as test: learned detector 99.4% / 87.5% of all attempts
+  with 0 of 960 / 1 of 320 false cases; procedures 23.7% / 46.9% with 8 of 960 / 1 of 320.
+  November as baseline, all of October as test: learned detector 99.4% / 88.2% with
+  0 of 1,920 / 2 of 640 false cases; procedures 23.1% / 46.6% with 6 of 1,920 / 29 of 640.
+  Without the 0.2 threshold floor the learned detector's false cases on these days were 2.1 to 6.4 per 100.
 - What does not work yet. A legitimate account type that is missing from the baseline is flagged in
   nearly every session (stress tier: Scalper 60 of 60, LeggedHedger 56 of 60, BlockWorker 60 of 60;
   the procedures flag 1, 60 and 15). For a pattern left out of training, the thresholds either keep
