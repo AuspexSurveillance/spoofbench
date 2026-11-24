@@ -40,6 +40,21 @@ Full tables: `FINDINGS.md` (simulated market), `FINDINGS_REAL.md` (all three sid
 The simulator, templates and detectors use only the Python standard library (3.9+). The ranking
 experiment needs numpy and scikit-learn. A fixed seed (20261123) reproduces every number exactly.
 
+## Specification and alert record (draft)
+
+`spec/PROCEDURES.md` states the procedures, the calibration method and the alert record without
+reference to this code, so they can be implemented independently. `spec/alert.schema.json` is the
+JSON Schema of an alert and `spec/example_alert.json` is one alert.
+
+    python tools/emit_alerts.py         # one seeded session -> alerts.jsonl, each record checked against the schema
+    python tests/test_alerts.py         # 4 checks
+
+To run the procedures on your own order and fill files, see `docs/RUN_ON_YOUR_OWN_RECORDS.md`:
+
+    python tools/run_on_csv.py --orders data/sample/orders_030.csv.gz --fills data/sample/fills_030.csv.gz \
+        --classes data/sample/episodes_030.json
+    python tests/test_csv.py            # the files flag the same orders as the session they were written from
+
 ## Layout
 
     spoofbench/sim.py        price-time-priority order book, two correlated instruments, background flow
@@ -60,6 +75,8 @@ experiment needs numpy and scikit-learn. A fixed seed (20261123) reproduces ever
     tools/diag_hold.py       why the Hold Brothers template is missed (extension set)
     tools/fill_fix.py        test of two changes to the fill-ratio test on recorded-data logs
     tools/make_figures.py    the figure in the paper
+    tools/emit_alerts.py     detector output as alert records that follow spec/alert.schema.json
+    tools/run_on_csv.py      the procedures on order and fill files in the published CSV format
     data/sample/             one exported simulated session
 
 ## The benchmark
@@ -113,6 +130,7 @@ own records, and reconciliation against exchange acknowledgements.
 Paper: Allen Yilun Li, "What CAT Feedback Cannot See: A Seeded Test of Three Controls for Consolidated
 Audit Trail Reporting Errors" (2026). The CAT checks are a simplified reimplementation from the public
 specification, not the CAT system.
+SSRN: https://papers.ssrn.com/abstract=7747778
 
 ## Recorded market data
 

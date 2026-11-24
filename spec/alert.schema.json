@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Timescaper/spoofbench/spec/alert.schema.json",
+  "title": "Surveillance alert record",
+  "description": "One alert raised by a spoofing, layering or cross-product procedure. Every number a reviewer needs to check the alert is in the record: the orders, the book at entry, each test with its observed value and the threshold in force, and the parameters used. Draft 0.1.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "alert_id", "procedure", "basis", "account", "session", "instrument",
+               "time_base", "window", "events", "tests", "exclusions", "repetition", "parameters", "narrative"],
+  "properties": {
+    "schema_version": {"type": "string", "enum": ["0.1"]},
+    "alert_id": {"type": "string"},
+    "procedure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "variant", "library_version"],
+      "properties": {
+        "id": {"type": "string", "enum": ["5.1", "5.2", "5.2P", "5.8"]},
+        "name": {"type": "string", "enum": ["spoofing", "layering", "persistent layering", "cross-product"]},
+        "variant": {"type": "string", "enum": ["base", "flip", "persistent"]},
+        "library_version": {"type": "string"}
+      }
+    },
+    "basis": {"type": "array", "items": {"type": "string"}},
+    "account": {"type": "string"},
+    "session": {"type": "string"},
+    "instrument": {"type": "string", "description": "Instrument of the flagged orders."},
+    "genuine_instrument": {"type": "string", "description": "Instrument of the opposite-side fill. Differs from instrument only for procedure 5.8."},
+    "time_base": {"type": "string", "enum": ["session_seconds", "unix_seconds"]},
+    "window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start", "end"],
+      "properties": {"start": {"type": "number"}, "end": {"type": "number"}}
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["t", "action", "order_id", "role", "side", "quantity"],
+        "properties": {
+          "t": {"type": "number"},
+          "action": {"type": "string", "enum": ["enter", "fill", "cancel", "replace"]},
+          "order_id": {"type": "string"},
+          "role": {"type": "string", "enum": ["flagged", "opposite_side"]},
+          "side": {"type": "string", "enum": ["B", "S"]},
+          "price": {"type": ["number", "null"]},
+          "quantity": {"type": "integer"},
+          "instrument": {"type": "string"}
+        }
+      }
+    },
+    "book_at_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["d", "displayed_same_side", "own_same_side", "own_opposite_side"],
+      "properties": {
+        "d": {"type": "integer", "description": "Ticks from the touch included in the depth."},
+        "displayed_same_side": {"type": "integer", "description": "Displayed quantity within d ticks on the side of the flagged orders, the account's own orders excluded, at entry of the first flagged order."},
+        "own_same_side": {"type": "integer"},
+        "own_opposite_side": {"type": "integer"}
+      }
+    },
+    "tests": {
+      "type": "array",
+      "description": "Each condition of the procedure, with the value observed and the threshold in force.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "observed", "comparison", "threshold", "passed"],
+        "properties": {
+          "name": {"type": "string", "enum": ["size", "distance", "fill_ratio", "cancel_latency", "entry_window",
+                                               "levels", "duration", "opposite_side_fill"]},
+          "observed": {"type": ["number", "boolean"]},
+          "comparison": {"type": "string", "enum": [">=", "<=", "=="]},
+          "threshold": {"type": ["number", "boolean"]},
+          "passed": {"type": "boolean"},
+          "note": {"type": "string"}
+        }
+      }
+    },
+    "exclusions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "applied", "met"],
+        "properties": {
+          "name": {"type": "string", "enum": ["two_sided_quoting", "requote"]},
+          "applied": {"type": "boolean", "description": "Whether the exclusion was switched on."},
+          "met": {"type": "boolean", "description": "Whether the account's activity met the exclusion. An alert is raised only if no applied exclusion is met."}
+        }
+      }
+    },
+    "repetition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["count", "required", "sessions"],
+      "properties": {
+        "count": {"type": "integer", "description": "Instances for this account in the trailing sessions, this one included."},
+        "required": {"type": "integer"},
+        "sessions": {"type": "integer"}
+      }
+    },
+    "parameters": {
+      "type": "object",
+      "description": "Parameter values in force for this account and instrument when the alert was raised.",
+      "additionalProperties": {"type": ["number", "boolean", "null"]},
+      "required": ["W", "k", "d", "t_cancel", "f_max", "n", "P_sessions", "L", "q_min"]
+    },
+    "calibration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["k_source"],
+      "properties": {
+        "k_source": {"type": "string", "enum": ["default", "account_class", "account"]},
+        "account_class": {"type": "string"},
+        "false_case_budget_per_100": {"type": "number"},
+        "calibrated_on": {"type": "string"}
+      }
+    },
+    "model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["score"],
+      "properties": {
+        "score": {"type": "number"},
+        "attributions": {"type": "array", "items": {"type": "object"}}
+      }
+    },
+    "narrative": {"type": "string", "description": "Assembled from the fields above by a fixed template. No free text."},
+    "disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": {"type": "string", "enum": ["open", "closed_legitimate", "closed_insufficient", "escalated", "referred"]},
+        "reviewer": {"type": "string"},
+        "note": {"type": "string"},
+        "t": {"type": "number"}
+      }
+    }
+  }
+}
