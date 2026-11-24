@@ -71,7 +71,7 @@ def budget_eval(idx, rows, key, budgets):
     return out
 
 
-def experiments(base, test, grid=GRID):
+def experiments(base, test, grid=GRID, held_out=("chen", "coscia", "oystacher", "lebental")):
     """All experiments on a list of baseline Index objects and a list of test Index objects."""
     accts = test[0].s.accounts
     n_legit = sum(v["truth"] == "legit" for v in accts.values())
@@ -185,7 +185,7 @@ def experiments(base, test, grid=GRID):
         tpl = lambda ix_list: {(ix.s.sid, e["id"]): e["template"] for ix in ix_list for e in ix.s.episodes}
         tb, tt = tpl(base), tpl(test)
         loo = {}
-        for held in ("chen", "coscia", "oystacher", "lebental"):
+        for held in held_out:
             keep = [r for r in tr if not any(tb[(r["sid"], e)] == held for e in r["eps"])]
             m2 = HistGradientBoostingClassifier(max_depth=4, max_iter=200, learning_rate=0.1, random_state=0)
             m2.fit(f(keep), np.array([r["true"] for r in keep]))

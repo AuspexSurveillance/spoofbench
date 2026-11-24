@@ -46,6 +46,16 @@ def test_detector_ignores_ground_truth():
     assert a == b and len(a) > 0
 
 
+def test_equities_extension():
+    """The extension set builds, seeds its three templates, and links the two-account scheme."""
+    from spoofbench.equities import make_session_eq, link_accounts
+    s = make_session_eq(0, 5, T=900.0)
+    assert {"trillium", "hold", "milrud"} <= {e["template"] for e in s.episodes}
+    v = link_accounts(s)
+    assert "G_MIL" in v.accounts and "M_MIL_DIRTY" not in v.accounts and len(v.orders) == len(s.orders)
+    assert all(o.acct != "G_MIL" for o in s.orders)          # the original session is not modified
+
+
 if __name__ == "__main__":
     for k, v in list(globals().items()):
         if k.startswith("test_"):

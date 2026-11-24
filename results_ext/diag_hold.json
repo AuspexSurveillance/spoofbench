@@ -1,0 +1,14 @@
+{
+ "episodes": 291,
+ "found": {
+  "reference": 2,
+  "no exclusions": 31,
+  "no size test": 77,
+  "no size test, no exclusions": 290,
+  "no size test, no exclusions, d=4": 290,
+  "no size test, d=4": 220
+ },
+ "median_layer_lots_within_3_ticks": 19,
+ "median_lots_required_by_class_threshold": 26.5,
+ "share_meeting_size_test": 0.223
+}

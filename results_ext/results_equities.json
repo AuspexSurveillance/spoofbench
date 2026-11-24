@@ -1,0 +1,2088 @@
+{
+ "meta": {
+  "base_sessions": 30,
+  "test_sessions": 30,
+  "session_seconds": 1800.0,
+  "accounts": 30,
+  "legit_accounts": 18,
+  "firm_orders_test": 678155,
+  "candidates_test": 117156,
+  "episodes_test": 6421,
+  "episodes_with_fill": 3561,
+  "attempts_without_fill": 2823,
+  "seed": 20261123,
+  "runtime_seconds": 103.5,
+  "extension": "equities v0.4",
+  "sources": {
+   "trillium": "FINRA news release, 'FINRA Sanctions Trillium Brokerage Services, LLC, Director of Trading, Chief Compliance Officer, and Nine Traders $2.26 Million for Illicit Equities Trading Strategy' (Sept. 13, 2010)",
+   "hold": "In re Hold Brothers On-Line Investment Services, LLC, et al., SEC Admin. Proc. File No. 3-15046, Exchange Act Release No. 67924 (Sept. 25, 2012)",
+   "milrud": "SEC v. Aleksandr Milrud, No. 15-cv-00237 (D.N.J.), complaint filed Jan. 13, 2015; SEC Litigation Release No. 23173"
+  }
+ },
+ "literal_defaults": {
+  "recall": {
+   "chen": [
+    0,
+    570
+   ],
+   "chen/evasive": [
+    0,
+    243
+   ],
+   "coscia": [
+    0,
+    283
+   ],
+   "coscia/evasive": [
+    0,
+    115
+   ],
+   "hold": [
+    0,
+    291
+   ],
+   "hold/evasive": [
+    0,
+    120
+   ],
+   "lebental": [
+    0,
+    117
+   ],
+   "lebental/evasive": [
+    0,
+    63
+   ],
+   "milrud": [
+    0,
+    333
+   ],
+   "milrud/evasive": [
+    0,
+    141
+   ],
+   "oystacher": [
+    0,
+    499
+   ],
+   "oystacher/evasive": [
+    0,
+    200
+   ],
+   "sarao": [
+    0,
+    64
+   ],
+   "sarao/evasive": [
+    0,
+    20
+   ],
+   "trillium": [
+    37,
+    349
+   ],
+   "trillium/evasive": [
+    0,
+    153
+   ]
+  },
+  "cases": 10,
+  "false_cases": {},
+  "false_cases_total": 0,
+  "instances": 37,
+  "false_instances": 0,
+  "sessions": 30,
+  "name": "5.1/5.2/5.8 literal, Appendix C defaults",
+  "false_cases_per_100_legit_account_sessions": 0.0,
+  "cases_per_session": 0.33,
+  "recall_faithful": 0.015,
+  "recall_evasive": 0.0
+ },
+ "fixed_k": [
+  {
+   "recall": {
+    "chen": [
+     419,
+     570
+    ],
+    "chen/evasive": [
+     36,
+     243
+    ],
+    "coscia": [
+     280,
+     283
+    ],
+    "coscia/evasive": [
+     100,
+     115
+    ],
+    "hold": [
+     77,
+     291
+    ],
+    "hold/evasive": [
+     6,
+     120
+    ],
+    "lebental": [
+     77,
+     117
+    ],
+    "lebental/evasive": [
+     20,
+     63
+    ],
+    "milrud": [
+     19,
+     333
+    ],
+    "milrud/evasive": [
+     7,
+     141
+    ],
+    "oystacher": [
+     491,
+     499
+    ],
+    "oystacher/evasive": [
+     176,
+     200
+    ],
+    "sarao": [
+     59,
+     64
+    ],
+    "sarao/evasive": [
+     5,
+     20
+    ],
+    "trillium": [
+     341,
+     349
+    ],
+    "trillium/evasive": [
+     22,
+     153
+    ]
+   },
+   "cases": 368,
+   "false_cases": {
+    "mm": 60,
+    "exec": 23,
+    "manip-acct": 12,
+    "prop": 11
+   },
+   "false_cases_total": 106,
+   "instances": 17004,
+   "false_instances": 14689,
+   "sessions": 30,
+   "name": "fixed k=0.02",
+   "false_cases_per_100_legit_account_sessions": 17.41,
+   "cases_per_session": 12.27,
+   "recall_faithful": 0.704,
+   "recall_evasive": 0.353
+  },
+  {
+   "recall": {
+    "chen": [
+     410,
+     570
+    ],
+    "chen/evasive": [
+     29,
+     243
+    ],
+    "coscia": [
+     279,
+     283
+    ],
+    "coscia/evasive": [
+     95,
+     115
+    ],
+    "hold": [
+     63,
+     291
+    ],
+    "hold/evasive": [
+     0,
+     120
+    ],
+    "lebental": [
+     68,
+     117
+    ],
+    "lebental/evasive": [
+     13,
+     63
+    ],
+    "milrud": [
+     14,
+     333
+    ],
+    "milrud/evasive": [
+     2,
+     141
+    ],
+    "oystacher": [
+     491,
+     499
+    ],
+    "oystacher/evasive": [
+     173,
+     200
+    ],
+    "sarao": [
+     59,
+     64
+    ],
+    "sarao/evasive": [
+     5,
+     20
+    ],
+    "trillium": [
+     341,
+     349
+    ],
+    "trillium/evasive": [
+     22,
+     153
+    ]
+   },
+   "cases": 327,
+   "false_cases": {
+    "mm": 60,
+    "exec": 19,
+    "prop": 3,
+    "manip-acct": 4
+   },
+   "false_cases_total": 86,
+   "instances": 13423,
+   "false_instances": 11182,
+   "sessions": 30,
+   "name": "fixed k=0.05",
+   "false_cases_per_100_legit_account_sessions": 15.19,
+   "cases_per_session": 10.9,
+   "recall_faithful": 0.688,
+   "recall_evasive": 0.321
+  },
+  {
+   "recall": {
+    "chen": [
+     397,
+     570
+    ],
+    "chen/evasive": [
+     14,
+     243
+    ],
+    "coscia": [
+     279,
+     283
+    ],
+    "coscia/evasive": [
+     78,
+     115
+    ],
+    "hold": [
+     2,
+     291
+    ],
+    "hold/evasive": [
+     0,
+     120
+    ],
+    "lebental": [
+     63,
+     117
+    ],
+    "lebental/evasive": [
+     7,
+     63
+    ],
+    "milrud": [
+     4,
+     333
+    ],
+    "milrud/evasive": [
+     0,
+     141
+    ],
+    "oystacher": [
+     486,
+     499
+    ],
+    "oystacher/evasive": [
+     161,
+     200
+    ],
+    "sarao": [
+     59,
+     64
+    ],
+    "sarao/evasive": [
+     5,
+     20
+    ],
+    "trillium": [
+     341,
+     349
+    ],
+    "trillium/evasive": [
+     22,
+     153
+    ]
+   },
+   "cases": 285,
+   "false_cases": {
+    "mm": 60,
+    "prop": 3,
+    "exec": 8,
+    "manip-acct": 1
+   },
+   "false_cases_total": 72,
+   "instances": 5625,
+   "false_instances": 3551,
+   "sessions": 30,
+   "name": "fixed k=0.1",
+   "false_cases_per_100_legit_account_sessions": 13.15,
+   "cases_per_session": 9.5,
+   "recall_faithful": 0.651,
+   "recall_evasive": 0.272
+  },
+  {
+   "recall": {
+    "chen": [
+     256,
+     570
+    ],
+    "chen/evasive": [
+     5,
+     243
+    ],
+    "coscia": [
+     259,
+     283
+    ],
+    "coscia/evasive": [
+     35,
+     115
+    ],
+    "hold": [
+     0,
+     291
+    ],
+    "hold/evasive": [
+     0,
+     120
+    ],
+    "lebental": [
+     46,
+     117
+    ],
+    "lebental/evasive": [
+     5,
+     63
+    ],
+    "milrud": [
+     0,
+     333
+    ],
+    "milrud/evasive": [
+     0,
+     141
+    ],
+    "oystacher": [
+     474,
+     499
+    ],
+    "oystacher/evasive": [
+     102,
+     200
+    ],
+    "sarao": [
+     59,
+     64
+    ],
+    "sarao/evasive": [
+     5,
+     20
+    ],
+    "trillium": [
+     341,
+     349
+    ],
+    "trillium/evasive": [
+     21,
+     153
+    ]
+   },
+   "cases": 195,
+   "false_cases": {
+    "mm": 1
+   },
+   "false_cases_total": 1,
+   "instances": 1791,
+   "false_instances": 54,
+   "sessions": 30,
+   "name": "fixed k=0.2",
+   "false_cases_per_100_legit_account_sessions": 0.19,
+   "cases_per_session": 6.5,
+   "recall_faithful": 0.573,
+   "recall_evasive": 0.164
+  },
+  {
+   "recall": {
+    "chen": [
+     118,
+     570
+    ],
+    "chen/evasive": [
+     0,
+     243
+    ],
+    "coscia": [
+     224,
+     283
+    ],
+    "coscia/evasive": [
+     13,
+     115
+    ],
+    "hold": [
+     0,
+     291
+    ],
+    "hold/evasive": [
+     0,
+     120
+    ],
+    "lebental": [
+     28,
+     117
+    ],
+    "lebental/evasive": [
+     1,
+     63
+    ],
+    "milrud": [
+     0,
+     333
+    ],
+    "milrud/evasive": [
+     0,
+     141
+    ],
+    "oystacher": [
+     453,
+     499
+    ],
+    "oystacher/evasive": [
+     52,
+     200
+    ],
+    "sarao": [
+     59,
+     64
+    ],
+    "sarao/evasive": [
+     5,
+     20
+    ],
+    "trillium": [
+     337,
+     349
+    ],
+    "trillium/evasive": [
+     20,
+     153
+    ]
+   },
+   "cases": 161,
+   "false_cases": {},
+   "false_cases_total": 0,
+   "instances": 1409,
+   "false_instances": 7,
+   "sessions": 30,
+   "name": "fixed k=0.3",
+   "false_cases_per_100_legit_account_sessions": 0.0,
+   "cases_per_session": 5.37,
+   "recall_faithful": 0.486,
+   "recall_evasive": 0.086
+  },
+  {
+   "recall": {
+    "chen": [
+     2,
+     570
+    ],
+    "chen/evasive": [
+     0,
+     243
+    ],
+    "coscia": [
+     142,
+     283
+    ],
+    "coscia/evasive": [
+     3,
+     115
+    ],
+    "hold": [
+     0,
+     291
+    ],
+    "hold/evasive": [
+     0,
+     120
+    ],
+    "lebental": [
+     6,
+     117
+    ],
+    "lebental/evasive": [
+     0,
+     63
+    ],
+    "milrud": [
+     0,
+     333
+    ],
+    "milrud/evasive": [
+     0,
+     141
+    ],
+    "oystacher": [
+     347,
+     499
+    ],
+    "oystacher/evasive": [
+     3,
+     200
+    ],
+    "sarao": [
+     59,
+     64
+    ],
+    "sarao/evasive": [
+     5,
+     20
+    ],
+    "trillium": [
+     326,
+     349
+    ],
+    "trillium/evasive": [
+     10,
+     153
+    ]
+   },
+   "cases": 118,
+   "false_cases": {},
+   "false_cases_total": 0,
+   "instances": 950,
+   "false_instances": 0,
+   "sessions": 30,
+   "name": "fixed k=0.5",
+   "false_cases_per_100_legit_account_sessions": 0.0,
+   "cases_per_session": 3.93,
+   "recall_faithful": 0.352,
+   "recall_evasive": 0.02
+  },
+  {
+   "recall": {
+    "chen": [
+     0,
+     570
+    ],
+    "chen/evasive": [
+     0,
+     243
+    ],
+    "coscia": [
+     5,
+     283
+    ],
+    "coscia/evasive": [
+     0,
+     115
+    ],
+    "hold": [
+     0,
+     291
+    ],
+    "hold/evasive": [
+     0,
+     120
+    ],
+    "lebental": [
+     0,
+     117
+    ],
+    "lebental/evasive": [
+     0,
+     63
+    ],
+    "milrud": [
+     0,
+     333
+    ],
+    "milrud/evasive": [
+     0,
+     141
+    ],
+    "oystacher": [
+     93,
+     499
+    ],
+    "oystacher/evasive": [
+     0,
+     200
+    ],
+    "sarao": [
+     59,
+     64
+    ],
+    "sarao/evasive": [
+     5,
+     20
+    ],
+    "trillium": [
+     239,
+     349
+    ],
+    "trillium/evasive": [
+     1,
+     153
+    ]
+   },
+   "cases": 79,
+   "false_cases": {},
+   "false_cases_total": 0,
+   "instances": 409,
+   "false_instances": 0,
+   "sessions": 30,
+   "name": "fixed k=1.0",
+   "false_cases_per_100_legit_account_sessions": 0.0,
+   "cases_per_session": 2.63,
+   "recall_faithful": 0.158,
+   "recall_evasive": 0.006
+  },
+  {
+   "recall": {
+    "chen": [
+     0,
+     570
+    ],
+    "chen/evasive": [
+     0,
+     243
+    ],
+    "coscia": [
+     0,
+     283
+    ],
+    "coscia/evasive": [
+     0,
+     115
+    ],
+    "hold": [
+     0,
+     291
+    ],
+    "hold/evasive": [
+     0,
+     120
+    ],
+    "lebental": [
+     0,
+     117
+    ],
+    "lebental/evasive": [
+     0,
+     63
+    ],
+    "milrud": [
+     0,
+     333
+    ],
+    "milrud/evasive": [
+     0,
+     141
+    ],
+    "oystacher": [
+     0,
+     499
+    ],
+    "oystacher/evasive": [
+     0,
+     200
+    ],
+    "sarao": [
+     59,
+     64
+    ],
+    "sarao/evasive": [
+     5,
+     20
+    ],
+    "trillium": [
+     37,
+     349
+    ],
+    "trillium/evasive": [
+     0,
+     153
+    ]
+   },
+   "cases": 37,
+   "false_cases": {},
+   "false_cases_total": 0,
+   "instances": 106,
+   "false_instances": 0,
+   "sessions": 30,
+   "name": "fixed k=2.0",
+   "false_cases_per_100_legit_account_sessions": 0.0,
+   "cases_per_session": 1.23,
+   "recall_faithful": 0.038,
+   "recall_evasive": 0.005
+  }
+ ],
+ "self_quantile": {
+  "recall": {
+   "chen": [
+    9,
+    570
+   ],
+   "chen/evasive": [
+    0,
+    243
+   ],
+   "coscia": [
+    0,
+    283
+   ],
+   "coscia/evasive": [
+    0,
+    115
+   ],
+   "hold": [
+    0,
+    291
+   ],
+   "hold/evasive": [
+    0,
+    120
+   ],
+   "lebental": [
+    3,
+    117
+   ],
+   "lebental/evasive": [
+    0,
+    63
+   ],
+   "milrud": [
+    0,
+    333
+   ],
+   "milrud/evasive": [
+    0,
+    141
+   ],
+   "oystacher": [
+    5,
+    499
+   ],
+   "oystacher/evasive": [
+    0,
+    200
+   ],
+   "sarao": [
+    59,
+    64
+   ],
+   "sarao/evasive": [
+    5,
+    20
+   ],
+   "trillium": [
+    3,
+    349
+   ],
+   "trillium/evasive": [
+    0,
+    153
+   ]
+  },
+  "cases": 33,
+  "false_cases": {},
+  "false_cases_total": 0,
+  "instances": 90,
+  "false_instances": 0,
+  "sessions": 30,
+  "name": "self-quantile 99.5%",
+  "false_cases_per_100_legit_account_sessions": 0.0,
+  "cases_per_session": 1.1,
+  "recall_faithful": 0.032,
+  "recall_evasive": 0.005,
+  "k": {
+   "BASIS_1": 10.333,
+   "BASIS_2": 20.0,
+   "DISC_1": 0.297,
+   "DISC_2": 0.355,
+   "DISC_3": 0.326,
+   "DISC_4": 0.327,
+   "DISC_5": 0.323,
+   "DISC_6": 0.298,
+   "DISC_7": 0.314,
+   "DISC_8": 0.331,
+   "EXEC_1": 0.468,
+   "EXEC_2": 0.459,
+   "EXEC_3": 0.456,
+   "MM_FAST_1": 0.417,
+   "MM_LADDER": 0.514,
+   "MM_SKEW_FAST": 0.483,
+   "MM_SKEW_SLOW_1": 0.27,
+   "MM_SKEW_SLOW_2": 0.207,
+   "M_CHEN_HI": 0.621,
+   "M_CHEN_LO": 0.485,
+   "M_COSCIA": 1.523,
+   "M_HOLD": 0.286,
+   "M_LEB": 0.779,
+   "M_MIL_CLEAN": 0.265,
+   "M_MIL_DIRTY": 0.406,
+   "M_MM_CHEN": 0.398,
+   "M_MM_LEB": 0.545,
+   "M_OYST": 1.436,
+   "M_SARAO": 0.542,
+   "M_TRIL": 2.596
+  }
+ },
+ "class_k": {
+  "recall": {
+   "chen": [
+    377,
+    570
+   ],
+   "chen/evasive": [
+    11,
+    243
+   ],
+   "coscia": [
+    279,
+    283
+   ],
+   "coscia/evasive": [
+    78,
+    115
+   ],
+   "hold": [
+    2,
+    291
+   ],
+   "hold/evasive": [
+    0,
+    120
+   ],
+   "lebental": [
+    59,
+    117
+   ],
+   "lebental/evasive": [
+    6,
+    63
+   ],
+   "milrud": [
+    4,
+    333
+   ],
+   "milrud/evasive": [
+    0,
+    141
+   ],
+   "oystacher": [
+    486,
+    499
+   ],
+   "oystacher/evasive": [
+    161,
+    200
+   ],
+   "sarao": [
+    59,
+    64
+   ],
+   "sarao/evasive": [
+    5,
+    20
+   ],
+   "trillium": [
+    341,
+    349
+   ],
+   "trillium/evasive": [
+    22,
+    153
+   ]
+  },
+  "cases": 215,
+  "false_cases": {
+   "prop": 3,
+   "manip-acct": 1,
+   "mm": 1
+  },
+  "false_cases_total": 5,
+  "instances": 2175,
+  "false_instances": 138,
+  "sessions": 30,
+  "name": "per-class k from seeded baseline",
+  "false_cases_per_100_legit_account_sessions": 0.74,
+  "cases_per_session": 7.17,
+  "recall_faithful": 0.641,
+  "recall_evasive": 0.268,
+  "k_by_class": {
+   "basis": 0.02,
+   "exec": 0.2,
+   "mm": 0.2,
+   "prop": 0.1
+  }
+ },
+ "ablations": [
+  {
+   "recall": {
+    "chen": [
+     377,
+     570
+    ],
+    "chen/evasive": [
+     11,
+     243
+    ],
+    "coscia": [
+     279,
+     283
+    ],
+    "coscia/evasive": [
+     78,
+     115
+    ],
+    "hold": [
+     2,
+     291
+    ],
+    "hold/evasive": [
+     0,
+     120
+    ],
+    "lebental": [
+     59,
+     117
+    ],
+    "lebental/evasive": [
+     6,
+     63
+    ],
+    "milrud": [
+     4,
+     333
+    ],
+    "milrud/evasive": [
+     0,
+     141
+    ],
+    "oystacher": [
+     486,
+     499
+    ],
+    "oystacher/evasive": [
+     161,
+     200
+    ],
+    "sarao": [
+     59,
+     64
+    ],
+    "sarao/evasive": [
+     5,
+     20
+    ],
+    "trillium": [
+     341,
+     349
+    ],
+    "trillium/evasive": [
+     22,
+     153
+    ]
+   },
+   "cases": 215,
+   "false_cases": {
+    "prop": 3,
+    "manip-acct": 1,
+    "mm": 1
+   },
+   "false_cases_total": 5,
+   "instances": 2175,
+   "false_instances": 138,
+   "sessions": 30,
+   "name": "per-class k (reference)",
+   "false_cases_per_100_legit_account_sessions": 0.74,
+   "cases_per_session": 7.17,
+   "recall_faithful": 0.641,
+   "recall_evasive": 0.268
+  },
+  {
+   "recall": {
+    "chen": [
+     377,
+     570
+    ],
+    "chen/evasive": [
+     11,
+     243
+    ],
+    "coscia": [
+     279,
+     283
+    ],
+    "coscia/evasive": [
+     78,
+     115
+    ],
+    "hold": [
+     2,
+     291
+    ],
+    "hold/evasive": [
+     0,
+     120
+    ],
+    "lebental": [
+     59,
+     117
+    ],
+    "lebental/evasive": [
+     6,
+     63
+    ],
+    "milrud": [
+     4,
+     333
+    ],
+    "milrud/evasive": [
+     0,
+     141
+    ],
+    "oystacher": [
+     2,
+     499
+    ],
+    "oystacher/evasive": [
+     1,
+     200
+    ],
+    "sarao": [
+     59,
+     64
+    ],
+    "sarao/evasive": [
+     5,
+     20
+    ],
+    "trillium": [
+     341,
+     349
+    ],
+    "trillium/evasive": [
+     22,
+     153
+    ]
+   },
+   "cases": 187,
+   "false_cases": {
+    "prop": 3,
+    "manip-acct": 1,
+    "mm": 1
+   },
+   "false_cases_total": 5,
+   "instances": 1518,
+   "false_instances": 126,
+   "sessions": 30,
+   "name": "no flip extension",
+   "false_cases_per_100_legit_account_sessions": 0.74,
+   "cases_per_session": 6.23,
+   "recall_faithful": 0.448,
+   "recall_evasive": 0.117
+  },
+  {
+   "recall": {
+    "chen": [
+     377,
+     570
+    ],
+    "chen/evasive": [
+     11,
+     243
+    ],
+    "coscia": [
+     279,
+     283
+    ],
+    "coscia/evasive": [
+     78,
+     115
+    ],
+    "hold": [
+     2,
+     291
+    ],
+    "hold/evasive": [
+     0,
+     120
+    ],
+    "lebental": [
+     59,
+     117
+    ],
+    "lebental/evasive": [
+     6,
+     63
+    ],
+    "milrud": [
+     4,
+     333
+    ],
+    "milrud/evasive": [
+     0,
+     141
+    ],
+    "oystacher": [
+     486,
+     499
+    ],
+    "oystacher/evasive": [
+     161,
+     200
+    ],
+    "sarao": [
+     0,
+     64
+    ],
+    "sarao/evasive": [
+     0,
+     20
+    ],
+    "trillium": [
+     341,
+     349
+    ],
+    "trillium/evasive": [
+     22,
+     153
+    ]
+   },
+   "cases": 188,
+   "false_cases": {
+    "prop": 3,
+    "manip-acct": 1,
+    "mm": 1
+   },
+   "false_cases_total": 5,
+   "instances": 2106,
+   "false_instances": 138,
+   "sessions": 30,
+   "name": "no persistent-layering extension",
+   "false_cases_per_100_legit_account_sessions": 0.74,
+   "cases_per_session": 6.27,
+   "recall_faithful": 0.618,
+   "recall_evasive": 0.264
+  },
+  {
+   "recall": {
+    "chen": [
+     377,
+     570
+    ],
+    "chen/evasive": [
+     11,
+     243
+    ],
+    "coscia": [
+     279,
+     283
+    ],
+    "coscia/evasive": [
+     78,
+     115
+    ],
+    "hold": [
+     2,
+     291
+    ],
+    "hold/evasive": [
+     0,
+     120
+    ],
+    "lebental": [
+     0,
+     117
+    ],
+    "lebental/evasive": [
+     0,
+     63
+    ],
+    "milrud": [
+     4,
+     333
+    ],
+    "milrud/evasive": [
+     0,
+     141
+    ],
+    "oystacher": [
+     486,
+     499
+    ],
+    "oystacher/evasive": [
+     161,
+     200
+    ],
+    "sarao": [
+     59,
+     64
+    ],
+    "sarao/evasive": [
+     5,
+     20
+    ],
+    "trillium": [
+     341,
+     349
+    ],
+    "trillium/evasive": [
+     22,
+     153
+    ]
+   },
+   "cases": 192,
+   "false_cases": {
+    "prop": 3,
+    "manip-acct": 1,
+    "mm": 1
+   },
+   "false_cases_total": 5,
+   "instances": 2091,
+   "false_instances": 124,
+   "sessions": 30,
+   "name": "no cross-instrument alignment",
+   "false_cases_per_100_legit_account_sessions": 0.74,
+   "cases_per_session": 6.4,
+   "recall_faithful": 0.618,
+   "recall_evasive": 0.263
+  },
+  {
+   "recall": {
+    "chen": [
+     385,
+     570
+    ],
+    "chen/evasive": [
+     14,
+     243
+    ],
+    "coscia": [
+     282,
+     283
+    ],
+    "coscia/evasive": [
+     83,
+     115
+    ],
+    "hold": [
+     31,
+     291
+    ],
+    "hold/evasive": [
+     0,
+     120
+    ],
+    "lebental": [
+     59,
+     117
+    ],
+    "lebental/evasive": [
+     6,
+     63
+    ],
+    "milrud": [
+     4,
+     333
+    ],
+    "milrud/evasive": [
+     0,
+     141
+    ],
+    "oystacher": [
+     487,
+     499
+    ],
+    "oystacher/evasive": [
+     165,
+     200
+    ],
+    "sarao": [
+     59,
+     64
+    ],
+    "sarao/evasive": [
+     5,
+     20
+    ],
+    "trillium": [
+     342,
+     349
+    ],
+    "trillium/evasive": [
+     24,
+     153
+    ]
+   },
+   "cases": 310,
+   "false_cases": {
+    "mm": 26,
+    "basis": 60,
+    "prop": 3,
+    "manip-acct": 1
+   },
+   "false_cases_total": 90,
+   "instances": 3759,
+   "false_instances": 1647,
+   "sessions": 30,
+   "name": "no exclusions",
+   "false_cases_per_100_legit_account_sessions": 16.48,
+   "cases_per_session": 10.33,
+   "recall_faithful": 0.658,
+   "recall_evasive": 0.282
+  },
+  {
+   "recall": {
+    "chen": [
+     410,
+     570
+    ],
+    "chen/evasive": [
+     29,
+     243
+    ],
+    "coscia": [
+     279,
+     283
+    ],
+    "coscia/evasive": [
+     95,
+     115
+    ],
+    "hold": [
+     63,
+     291
+    ],
+    "hold/evasive": [
+     0,
+     120
+    ],
+    "lebental": [
+     68,
+     117
+    ],
+    "lebental/evasive": [
+     13,
+     63
+    ],
+    "milrud": [
+     14,
+     333
+    ],
+    "milrud/evasive": [
+     2,
+     141
+    ],
+    "oystacher": [
+     491,
+     499
+    ],
+    "oystacher/evasive": [
+     173,
+     200
+    ],
+    "sarao": [
+     59,
+     64
+    ],
+    "sarao/evasive": [
+     5,
+     20
+    ],
+    "trillium": [
+     341,
+     349
+    ],
+    "trillium/evasive": [
+     22,
+     153
+    ]
+   },
+   "cases": 327,
+   "false_cases": {
+    "mm": 60,
+    "exec": 19,
+    "prop": 3,
+    "manip-acct": 4
+   },
+   "false_cases_total": 86,
+   "instances": 13423,
+   "false_instances": 11182,
+   "sessions": 30,
+   "name": "fixed k=0.05 (for comparison)",
+   "false_cases_per_100_legit_account_sessions": 15.19,
+   "cases_per_session": 10.9,
+   "recall_faithful": 0.688,
+   "recall_evasive": 0.321
+  },
+  {
+   "recall": {
+    "chen": [
+     422,
+     570
+    ],
+    "chen/evasive": [
+     41,
+     243
+    ],
+    "coscia": [
+     282,
+     283
+    ],
+    "coscia/evasive": [
+     108,
+     115
+    ],
+    "hold": [
+     238,
+     291
+    ],
+    "hold/evasive": [
+     8,
+     120
+    ],
+    "lebental": [
+     87,
+     117
+    ],
+    "lebental/evasive": [
+     16,
+     63
+    ],
+    "milrud": [
+     14,
+     333
+    ],
+    "milrud/evasive": [
+     2,
+     141
+    ],
+    "oystacher": [
+     492,
+     499
+    ],
+    "oystacher/evasive": [
+     179,
+     200
+    ],
+    "sarao": [
+     59,
+     64
+    ],
+    "sarao/evasive": [
+     5,
+     20
+    ],
+    "trillium": [
+     342,
+     349
+    ],
+    "trillium/evasive": [
+     24,
+     153
+    ]
+   },
+   "cases": 522,
+   "false_cases": {
+    "mm": 150,
+    "exec": 37,
+    "basis": 60,
+    "manip-acct": 6,
+    "prop": 3
+   },
+   "false_cases_total": 256,
+   "instances": 41594,
+   "false_instances": 39037,
+   "sessions": 30,
+   "name": "fixed k=0.05, no exclusions",
+   "false_cases_per_100_legit_account_sessions": 46.3,
+   "cases_per_session": 17.4,
+   "recall_faithful": 0.773,
+   "recall_evasive": 0.363
+  },
+  {
+   "recall": {
+    "chen": [
+     395,
+     570
+    ],
+    "chen/evasive": [
+     12,
+     243
+    ],
+    "coscia": [
+     279,
+     283
+    ],
+    "coscia/evasive": [
+     78,
+     115
+    ],
+    "hold": [
+     12,
+     291
+    ],
+    "hold/evasive": [
+     0,
+     120
+    ],
+    "lebental": [
+     95,
+     117
+    ],
+    "lebental/evasive": [
+     11,
+     63
+    ],
+    "milrud": [
+     17,
+     333
+    ],
+    "milrud/evasive": [
+     0,
+     141
+    ],
+    "oystacher": [
+     486,
+     499
+    ],
+    "oystacher/evasive": [
+     161,
+     200
+    ],
+    "sarao": [
+     59,
+     64
+    ],
+    "sarao/evasive": [
+     5,
+     20
+    ],
+    "trillium": [
+     341,
+     349
+    ],
+    "trillium/evasive": [
+     22,
+     153
+    ]
+   },
+   "cases": 440,
+   "false_cases": {
+    "prop": 80,
+    "exec": 15,
+    "basis": 13,
+    "mm": 21,
+    "manip-acct": 31
+   },
+   "false_cases_total": 160,
+   "instances": 2473,
+   "false_instances": 344,
+   "sessions": 30,
+   "name": "repetition n=1",
+   "false_cases_per_100_legit_account_sessions": 23.89,
+   "cases_per_session": 14.67,
+   "recall_faithful": 0.672,
+   "recall_evasive": 0.274
+  },
+  {
+   "recall": {
+    "chen": [
+     395,
+     570
+    ],
+    "chen/evasive": [
+     12,
+     243
+    ],
+    "coscia": [
+     279,
+     283
+    ],
+    "coscia/evasive": [
+     78,
+     115
+    ],
+    "hold": [
+     11,
+     291
+    ],
+    "hold/evasive": [
+     0,
+     120
+    ],
+    "lebental": [
+     95,
+     117
+    ],
+    "lebental/evasive": [
+     11,
+     63
+    ],
+    "milrud": [
+     16,
+     333
+    ],
+    "milrud/evasive": [
+     0,
+     141
+    ],
+    "oystacher": [
+     486,
+     499
+    ],
+    "oystacher/evasive": [
+     161,
+     200
+    ],
+    "sarao": [
+     59,
+     64
+    ],
+    "sarao/evasive": [
+     5,
+     20
+    ],
+    "trillium": [
+     341,
+     349
+    ],
+    "trillium/evasive": [
+     22,
+     153
+    ]
+   },
+   "cases": 360,
+   "false_cases": {
+    "manip-acct": 26,
+    "prop": 39,
+    "mm": 14,
+    "basis": 2,
+    "exec": 1
+   },
+   "false_cases_total": 82,
+   "instances": 2382,
+   "false_instances": 255,
+   "sessions": 30,
+   "name": "repetition 3 within 5 sessions",
+   "false_cases_per_100_legit_account_sessions": 10.37,
+   "cases_per_session": 12.0,
+   "recall_faithful": 0.671,
+   "recall_evasive": 0.274
+  }
+ ],
+ "ranking": {
+  "train_candidates": 100349,
+  "train_true": 3319,
+  "test_candidates": 100120,
+  "test_true": 3314,
+  "average_precision": {
+   "model": 0.994,
+   "by_imbalance_ratio": 0.66,
+   "by_size_asymmetry": 0.278
+  },
+  "top_n_per_session": {
+   "model": {
+    "5": {
+     "recall_faithful": 0.054,
+     "recall_all": 0.042,
+     "precision": 1.0
+    },
+    "10": {
+     "recall_faithful": 0.11,
+     "recall_all": 0.084,
+     "precision": 1.0
+    },
+    "20": {
+     "recall_faithful": 0.22,
+     "recall_all": 0.166,
+     "precision": 1.0
+    },
+    "40": {
+     "recall_faithful": 0.426,
+     "recall_all": 0.324,
+     "precision": 1.0
+    }
+   },
+   "by_imbalance_ratio": {
+    "5": {
+     "recall_faithful": 0.059,
+     "recall_all": 0.042,
+     "precision": 1.0
+    },
+    "10": {
+     "recall_faithful": 0.118,
+     "recall_all": 0.083,
+     "precision": 1.0
+    },
+    "20": {
+     "recall_faithful": 0.225,
+     "recall_all": 0.161,
+     "precision": 0.99
+    },
+    "40": {
+     "recall_faithful": 0.392,
+     "recall_all": 0.303,
+     "precision": 0.952
+    }
+   },
+   "by_size_asymmetry": {
+    "5": {
+     "recall_faithful": 0.049,
+     "recall_all": 0.035,
+     "precision": 0.973
+    },
+    "10": {
+     "recall_faithful": 0.092,
+     "recall_all": 0.067,
+     "precision": 0.897
+    },
+    "20": {
+     "recall_faithful": 0.162,
+     "recall_all": 0.121,
+     "precision": 0.798
+    },
+    "40": {
+     "recall_faithful": 0.27,
+     "recall_all": 0.211,
+     "precision": 0.716
+    }
+   }
+  },
+  "rule_instances_per_session": 70.2,
+  "rule_at_its_own_volume": {
+   "recall_faithful": 0.634,
+   "recall_all": 0.525,
+   "precision": 0.934
+  },
+  "model_at_rule_volume": {
+   "N": 70,
+   "recall_faithful": 0.649,
+   "recall_all": 0.554,
+   "precision": 1.0
+  }
+ },
+ "degradation_chen": {
+  "latency": [
+   {
+    "bin": "0-1",
+    "n": 79,
+    "rule": 0.835,
+    "model": 0.392
+   },
+   {
+    "bin": "1-2.5",
+    "n": 158,
+    "rule": 0.759,
+    "model": 0.405
+   },
+   {
+    "bin": "2.5-5",
+    "n": 295,
+    "rule": 0.675,
+    "model": 0.342
+   },
+   {
+    "bin": "5-10",
+    "n": 111,
+    "rule": 0.009,
+    "model": 0.135
+   },
+   {
+    "bin": "10-20",
+    "n": 170,
+    "rule": 0.012,
+    "model": 0.082
+   }
+  ],
+  "spoof_qty": [
+   {
+    "bin": "0-15",
+    "n": 80,
+    "rule": 0.013,
+    "model": 0.013
+   },
+   {
+    "bin": "15-30",
+    "n": 81,
+    "rule": 0.025,
+    "model": 0.025
+   },
+   {
+    "bin": "30-50",
+    "n": 211,
+    "rule": 0.389,
+    "model": 0.1
+   },
+   {
+    "bin": "50-80",
+    "n": 164,
+    "rule": 0.604,
+    "model": 0.22
+   },
+   {
+    "bin": "80-200",
+    "n": 277,
+    "rule": 0.736,
+    "model": 0.596
+   }
+  ]
+ },
+ "leave_one_template_out": {
+  "trillium": {
+   "n": 349,
+   "model_never_shown_this_template": 0.923,
+   "model_trained_on_all": 0.934,
+   "rule": 0.977
+  },
+  "hold": {
+   "n": 291,
+   "model_never_shown_this_template": 0.797,
+   "model_trained_on_all": 0.945,
+   "rule": 0.007
+  },
+  "milrud": {
+   "n": 333,
+   "model_never_shown_this_template": 0.024,
+   "model_trained_on_all": 0.081,
+   "rule": 0.012
+  },
+  "oystacher": {
+   "n": 499,
+   "model_never_shown_this_template": 0.238,
+   "model_trained_on_all": 0.898,
+   "rule": 0.974
+  }
+ },
+ "carried_over": {
+  "recall": {
+   "chen": [
+    333,
+    570
+   ],
+   "chen/evasive": [
+    9,
+    243
+   ],
+   "coscia": [
+    279,
+    283
+   ],
+   "coscia/evasive": [
+    78,
+    115
+   ],
+   "hold": [
+    2,
+    291
+   ],
+   "hold/evasive": [
+    0,
+    120
+   ],
+   "lebental": [
+    50,
+    117
+   ],
+   "lebental/evasive": [
+    2,
+    63
+   ],
+   "milrud": [
+    4,
+    333
+   ],
+   "milrud/evasive": [
+    0,
+    141
+   ],
+   "oystacher": [
+    486,
+    499
+   ],
+   "oystacher/evasive": [
+    161,
+    200
+   ],
+   "sarao": [
+    59,
+    64
+   ],
+   "sarao/evasive": [
+    5,
+    20
+   ],
+   "trillium": [
+    341,
+    349
+   ],
+   "trillium/evasive": [
+    22,
+    153
+   ]
+  },
+  "cases": 196,
+  "false_cases": {
+   "prop": 3,
+   "manip-acct": 1
+  },
+  "false_cases_total": 4,
+  "instances": 2073,
+  "false_instances": 105,
+  "sessions": 30,
+  "name": "v0.3 class thresholds, not re-chosen",
+  "false_cases_per_100_legit_account_sessions": 0.56,
+  "cases_per_session": 6.53,
+  "recall_faithful": 0.62,
+  "recall_evasive": 0.263,
+  "k_by_class": {
+   "basis": 0.02,
+   "exec": 0.2,
+   "mm": 0.3,
+   "prop": 0.1
+  }
+ },
+ "linked": {
+  "recall": {
+   "chen": [
+    377,
+    570
+   ],
+   "chen/evasive": [
+    11,
+    243
+   ],
+   "coscia": [
+    279,
+    283
+   ],
+   "coscia/evasive": [
+    78,
+    115
+   ],
+   "hold": [
+    2,
+    291
+   ],
+   "hold/evasive": [
+    0,
+    120
+   ],
+   "lebental": [
+    59,
+    117
+   ],
+   "lebental/evasive": [
+    6,
+    63
+   ],
+   "milrud": [
+    168,
+    333
+   ],
+   "milrud/evasive": [
+    1,
+    141
+   ],
+   "oystacher": [
+    486,
+    499
+   ],
+   "oystacher/evasive": [
+    161,
+    200
+   ],
+   "sarao": [
+    59,
+    64
+   ],
+   "sarao/evasive": [
+    5,
+    20
+   ],
+   "trillium": [
+    341,
+    349
+   ],
+   "trillium/evasive": [
+    22,
+    153
+   ]
+  },
+  "cases": 240,
+  "false_cases": {
+   "prop": 3,
+   "mm": 1
+  },
+  "false_cases_total": 4,
+  "instances": 2380,
+  "false_instances": 173,
+  "sessions": 30,
+  "name": "per-class k, the two accounts linked",
+  "false_cases_per_100_legit_account_sessions": 0.74,
+  "cases_per_session": 8.0,
+  "recall_faithful": 0.707,
+  "recall_evasive": 0.269
+ },
+ "hold_by_ratio": [
+  {
+   "ratio": "1.0-1.5",
+   "n": 45,
+   "with_exclusions": 0,
+   "without_exclusions": 0
+  },
+  {
+   "ratio": "1.5-2.0",
+   "n": 61,
+   "with_exclusions": 0,
+   "without_exclusions": 0
+  },
+  {
+   "ratio": "2.0-2.5",
+   "n": 100,
+   "with_exclusions": 0,
+   "without_exclusions": 6
+  },
+  {
+   "ratio": "2.5-3.1",
+   "n": 205,
+   "with_exclusions": 2,
+   "without_exclusions": 25
+  }
+ ]
+}

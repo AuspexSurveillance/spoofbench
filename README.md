@@ -29,7 +29,7 @@ Full tables: `FINDINGS.md` (simulated market), `FINDINGS_REAL.md` (all three sid
 
 ## Run it
 
-    python tests/test_basic.py          # 4 checks, a few seconds
+    python tests/test_basic.py          # 5 checks, under a minute
     python run_benchmark.py             # 60 simulated sessions, about 2 minutes; writes results/results.json
     python report.py                    # writes results/results.md
     python run_benchmark.py --dump data # also writes every session as CSV (orders, fills) and JSON (labels)
@@ -46,13 +46,16 @@ experiment needs numpy and scikit-learn. A fixed seed (20261123) reproduces ever
     spoofbench/bench.py      account roster, session builder, CSV export
     spoofbench/detect.py     candidate pairing, detection procedures, two variants, calibration, scoring
     spoofbench/replay.py     replay of recorded order-by-order data with a queue-position model
+    spoofbench/equities.py   extension set: three equities layering templates, account linking
     run_benchmark.py         all experiments on the simulated market
     run_real.py              replay and experiments on recorded data
+    run_equities.py          the extension set on the simulated market
     report.py                results JSON -> Markdown
     tools/get_cme_mbo.py     prices, buys and downloads CME MBO files from Databento (asks before buying)
     tools/prep_dbn.py        cuts a Databento MBO day file into 30-minute session windows
     tools/selfq_floor.py     own-percentile calibration with and without a floor
     tools/diag_flip.py       why flip episodes are missed on a thin book
+    tools/diag_hold.py       why the Hold Brothers template is missed (extension set)
     tools/make_figures.py    the figure in the paper
     data/sample/             one exported simulated session
 
@@ -76,6 +79,21 @@ Templates and sources (quoted facts and assumptions are in `SOURCES` in `spoofbe
 - lebental: In re Sidney Lebental, CFTC Docket No. 26-01 (2026)
 
 Thirty percent of episodes are evasive variants (smaller, slower), reported separately.
+
+## Extension set: equities layering (v0.4)
+
+Three more templates, from SEC and FINRA documents, run as a separate set so that the five
+templates above and every number in the paper stay exactly reproducible:
+
+- trillium: FINRA action against Trillium Brokerage Services, LLC (Sept. 13, 2010)
+- hold: In re Hold Brothers On-Line Investment Services, LLC, SEC Admin. Proc. File No. 3-15046 (2012)
+- milrud: SEC v. Milrud, No. 15-cv-00237 (D.N.J. 2015), where one account layers and a second takes the fill
+
+    python run_equities.py              # 60 simulated sessions; writes results_ext/results_equities.json and .md
+    python tools/diag_hold.py           # which test removes the Hold Brothers episodes
+
+Findings and limits: `FINDINGS_EQ.md`. Quoted facts and assumptions: `SOURCES_EQ` in
+`spoofbench/equities.py`. These templates run on the simulated market only.
 
 ## Recorded market data
 
