@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Timescaper/spoofbench/spec/alert.schema.json",
+  "$id": "https://github.com/AuspexSurveillance/spoofbench/spec/alert.schema.json",
   "title": "Surveillance alert record",
   "description": "One alert raised by a spoofing, layering or cross-product procedure. Every number a reviewer needs to check the alert is in the record: the orders, the book at entry, each test with its observed value and the threshold in force, and the parameters used. Draft 0.1.",
   "type": "object",
