@@ -1,0 +1,1455 @@
+{
+ "meta": {
+  "tier": "stress",
+  "base_sessions": 30,
+  "test_sessions": 30,
+  "accounts": 35,
+  "legit_accounts": 24,
+  "groups_base": 230556,
+  "groups_test": 229164,
+  "seeded_groups_base": 6713,
+  "episodes_test": 5276,
+  "episodes_test_without_fill": 2127,
+  "features": [
+   "Q",
+   "n_ord",
+   "n_lev",
+   "n_gen",
+   "dist_min",
+   "dist_max",
+   "dist_wm",
+   "share_touch",
+   "r_d3",
+   "r_d0",
+   "r_lvl",
+   "r_all",
+   "r_med",
+   "dur",
+   "dur_last",
+   "ent_span",
+   "fill_share",
+   "sib_fill",
+   "own_same",
+   "two_sided",
+   "opp_cxl_sim",
+   "opp_cxl_post",
+   "again_05",
+   "again_5",
+   "same_afill_post1",
+   "same_pfill_life",
+   "u_exp",
+   "u_exec",
+   "u_exec_post",
+   "u_lat",
+   "asym_exp",
+   "asym_exec",
+   "r_live",
+   "wave_cxl",
+   "r_wave",
+   "ctx_n",
+   "ctx_fill_w",
+   "ctx_exec_w",
+   "ctx_again_w",
+   "ctx_short_w",
+   "ctx_qshare",
+   "ctx_ofill",
+   "ctx_ofill_big"
+  ],
+  "n": 2,
+  "budget": 2.0,
+  "floor": 0.2,
+  "never_trained_on": [
+   "ada_cross",
+   "ada_flip",
+   "ada_same"
+  ],
+  "seed": 20261123,
+  "runtime_seconds": 745.2
+ },
+ "rule": {
+  "name": "procedures, per-class multiple",
+  "sessions": 30,
+  "completed_faithful": [
+   1829,
+   2255
+  ],
+  "completed_evasive": [
+   453,
+   894
+  ],
+  "unfilled_faithful": [
+   90,
+   1490
+  ],
+  "unfilled_evasive": [
+   10,
+   637
+  ],
+  "all_attempts": [
+   2382,
+   5276
+  ],
+  "false_cases": {
+   "exec": 10,
+   "prop": 3
+  },
+  "false_cases_legit": 13,
+  "false_cases_per_100_legit_account_sessions": 1.81,
+  "cases": 258,
+  "instances": 2562,
+  "false_instances": 138,
+  "by_template": {
+   "ada_cross/unfilled": [
+    1,
+    8
+   ],
+   "ada_cross": [
+    139,
+    158
+   ],
+   "ada_cross/evasive/unfilled": [
+    0,
+    8
+   ],
+   "ada_cross/evasive": [
+    40,
+    61
+   ],
+   "ada_flip": [
+    307,
+    309
+   ],
+   "ada_flip/evasive": [
+    125,
+    128
+   ],
+   "ada_same/unfilled": [
+    5,
+    63
+   ],
+   "ada_same": [
+    302,
+    368
+   ],
+   "ada_same/evasive/unfilled": [
+    2,
+    39
+   ],
+   "ada_same/evasive": [
+    54,
+    110
+   ],
+   "chen/unfilled": [
+    22,
+    324
+   ],
+   "chen": [
+    262,
+    496
+   ],
+   "chen/evasive/unfilled": [
+    1,
+    142
+   ],
+   "chen/evasive": [
+    10,
+    228
+   ],
+   "coscia/unfilled": [
+    60,
+    1084
+   ],
+   "coscia": [
+    231,
+    243
+   ],
+   "coscia/evasive/unfilled": [
+    7,
+    442
+   ],
+   "coscia/evasive": [
+    31,
+    74
+   ],
+   "lebental/unfilled": [
+    1,
+    10
+   ],
+   "lebental": [
+    51,
+    126
+   ],
+   "lebental/evasive/unfilled": [
+    0,
+    5
+   ],
+   "lebental/evasive": [
+    5,
+    59
+   ],
+   "oystacher": [
+    490,
+    502
+   ],
+   "oystacher/evasive/unfilled": [
+    0,
+    1
+   ],
+   "oystacher/evasive": [
+    183,
+    216
+   ],
+   "sarao/unfilled": [
+    1,
+    1
+   ],
+   "sarao": [
+    47,
+    53
+   ],
+   "sarao/evasive": [
+    5,
+    18
+   ]
+  },
+  "k_by_class": {
+   "basis": 1.0,
+   "exec": 2.0,
+   "mm": 0.2,
+   "prop": 0.1
+  }
+ },
+ "learned": {
+  "name": "learned detector",
+  "sessions": 30,
+  "completed_faithful": [
+   2233,
+   2255
+  ],
+  "completed_evasive": [
+   836,
+   894
+  ],
+  "unfilled_faithful": [
+   1483,
+   1490
+  ],
+  "unfilled_evasive": [
+   628,
+   637
+  ],
+  "all_attempts": [
+   5180,
+   5276
+  ],
+  "false_cases": {},
+  "false_cases_legit": 0,
+  "false_cases_per_100_legit_account_sessions": 0.0,
+  "cases": 304,
+  "instances": 6787,
+  "false_instances": 327,
+  "by_template": {
+   "ada_cross/unfilled": [
+    8,
+    8
+   ],
+   "ada_cross": [
+    158,
+    158
+   ],
+   "ada_cross/evasive/unfilled": [
+    7,
+    8
+   ],
+   "ada_cross/evasive": [
+    61,
+    61
+   ],
+   "ada_flip": [
+    309,
+    309
+   ],
+   "ada_flip/evasive": [
+    127,
+    128
+   ],
+   "ada_same/unfilled": [
+    62,
+    63
+   ],
+   "ada_same": [
+    366,
+    368
+   ],
+   "ada_same/evasive/unfilled": [
+    37,
+    39
+   ],
+   "ada_same/evasive": [
+    107,
+    110
+   ],
+   "chen/unfilled": [
+    319,
+    324
+   ],
+   "chen": [
+    494,
+    496
+   ],
+   "chen/evasive/unfilled": [
+    138,
+    142
+   ],
+   "chen/evasive": [
+    205,
+    228
+   ],
+   "coscia/unfilled": [
+    1084,
+    1084
+   ],
+   "coscia": [
+    243,
+    243
+   ],
+   "coscia/evasive/unfilled": [
+    442,
+    442
+   ],
+   "coscia/evasive": [
+    74,
+    74
+   ],
+   "lebental/unfilled": [
+    9,
+    10
+   ],
+   "lebental": [
+    117,
+    126
+   ],
+   "lebental/evasive/unfilled": [
+    4,
+    5
+   ],
+   "lebental/evasive": [
+    42,
+    59
+   ],
+   "oystacher": [
+    500,
+    502
+   ],
+   "oystacher/evasive/unfilled": [
+    0,
+    1
+   ],
+   "oystacher/evasive": [
+    205,
+    216
+   ],
+   "sarao/unfilled": [
+    1,
+    1
+   ],
+   "sarao": [
+    46,
+    53
+   ],
+   "sarao/evasive": [
+    15,
+    18
+   ]
+  },
+  "thresholds": {
+   "basis": 0.2,
+   "exec": 0.2,
+   "mm": 0.2,
+   "prop": 0.2
+  },
+  "baseline_out_of_fold": {
+   "all_attempts": [
+    5176,
+    5278
+   ],
+   "false_cases": {
+    "mm": 1,
+    "exec": 1
+   },
+   "false_cases_per_100_legit_account_sessions": 0.28
+  }
+ },
+ "learned_budget_only": {
+  "name": "learned detector, budget thresholds without the floor",
+  "sessions": 30,
+  "completed_faithful": [
+   2237,
+   2255
+  ],
+  "completed_evasive": [
+   843,
+   894
+  ],
+  "unfilled_faithful": [
+   1484,
+   1490
+  ],
+  "unfilled_evasive": [
+   634,
+   637
+  ],
+  "all_attempts": [
+   5198,
+   5276
+  ],
+  "false_cases": {
+   "basis": 3,
+   "prop": 9,
+   "mm": 1
+  },
+  "false_cases_legit": 13,
+  "false_cases_per_100_legit_account_sessions": 1.81,
+  "cases": 320,
+  "instances": 8063,
+  "false_instances": 1403,
+  "by_template": {
+   "ada_cross/unfilled": [
+    8,
+    8
+   ],
+   "ada_cross": [
+    158,
+    158
+   ],
+   "ada_cross/evasive/unfilled": [
+    8,
+    8
+   ],
+   "ada_cross/evasive": [
+    61,
+    61
+   ],
+   "ada_flip": [
+    309,
+    309
+   ],
+   "ada_flip/evasive": [
+    127,
+    128
+   ],
+   "ada_same/unfilled": [
+    63,
+    63
+   ],
+   "ada_same": [
+    366,
+    368
+   ],
+   "ada_same/evasive/unfilled": [
+    39,
+    39
+   ],
+   "ada_same/evasive": [
+    110,
+    110
+   ],
+   "chen/unfilled": [
+    319,
+    324
+   ],
+   "chen": [
+    495,
+    496
+   ],
+   "chen/evasive/unfilled": [
+    140,
+    142
+   ],
+   "chen/evasive": [
+    207,
+    228
+   ],
+   "coscia/unfilled": [
+    1084,
+    1084
+   ],
+   "coscia": [
+    243,
+    243
+   ],
+   "coscia/evasive/unfilled": [
+    442,
+    442
+   ],
+   "coscia/evasive": [
+    74,
+    74
+   ],
+   "lebental/unfilled": [
+    9,
+    10
+   ],
+   "lebental": [
+    119,
+    126
+   ],
+   "lebental/evasive/unfilled": [
+    5,
+    5
+   ],
+   "lebental/evasive": [
+    44,
+    59
+   ],
+   "oystacher": [
+    500,
+    502
+   ],
+   "oystacher/evasive/unfilled": [
+    0,
+    1
+   ],
+   "oystacher/evasive": [
+    205,
+    216
+   ],
+   "sarao/unfilled": [
+    1,
+    1
+   ],
+   "sarao": [
+    47,
+    53
+   ],
+   "sarao/evasive": [
+    15,
+    18
+   ]
+  },
+  "thresholds": {
+   "basis": 0.0468,
+   "exec": 0.073,
+   "mm": 0.085,
+   "prop": 0.0396
+  }
+ },
+ "by_pattern": {
+  "chen": {
+   "learned": {
+    "completed_faithful": [
+     494,
+     496
+    ],
+    "completed_evasive": [
+     205,
+     228
+    ],
+    "unfilled": [
+     457,
+     466
+    ],
+    "all_attempts": [
+     1156,
+     1190
+    ]
+   },
+   "rule": {
+    "completed_faithful": [
+     262,
+     496
+    ],
+    "completed_evasive": [
+     10,
+     228
+    ],
+    "unfilled": [
+     23,
+     466
+    ],
+    "all_attempts": [
+     295,
+     1190
+    ]
+   }
+  },
+  "coscia": {
+   "learned": {
+    "completed_faithful": [
+     243,
+     243
+    ],
+    "completed_evasive": [
+     74,
+     74
+    ],
+    "unfilled": [
+     1526,
+     1526
+    ],
+    "all_attempts": [
+     1843,
+     1843
+    ]
+   },
+   "rule": {
+    "completed_faithful": [
+     231,
+     243
+    ],
+    "completed_evasive": [
+     31,
+     74
+    ],
+    "unfilled": [
+     67,
+     1526
+    ],
+    "all_attempts": [
+     329,
+     1843
+    ]
+   }
+  },
+  "oystacher": {
+   "learned": {
+    "completed_faithful": [
+     500,
+     502
+    ],
+    "completed_evasive": [
+     205,
+     216
+    ],
+    "unfilled": [
+     0,
+     1
+    ],
+    "all_attempts": [
+     705,
+     719
+    ]
+   },
+   "rule": {
+    "completed_faithful": [
+     490,
+     502
+    ],
+    "completed_evasive": [
+     183,
+     216
+    ],
+    "unfilled": [
+     0,
+     1
+    ],
+    "all_attempts": [
+     673,
+     719
+    ]
+   }
+  },
+  "sarao": {
+   "learned": {
+    "completed_faithful": [
+     46,
+     53
+    ],
+    "completed_evasive": [
+     15,
+     18
+    ],
+    "unfilled": [
+     1,
+     1
+    ],
+    "all_attempts": [
+     62,
+     72
+    ]
+   },
+   "rule": {
+    "completed_faithful": [
+     47,
+     53
+    ],
+    "completed_evasive": [
+     5,
+     18
+    ],
+    "unfilled": [
+     1,
+     1
+    ],
+    "all_attempts": [
+     53,
+     72
+    ]
+   }
+  },
+  "lebental": {
+   "learned": {
+    "completed_faithful": [
+     117,
+     126
+    ],
+    "completed_evasive": [
+     42,
+     59
+    ],
+    "unfilled": [
+     13,
+     15
+    ],
+    "all_attempts": [
+     172,
+     200
+    ]
+   },
+   "rule": {
+    "completed_faithful": [
+     51,
+     126
+    ],
+    "completed_evasive": [
+     5,
+     59
+    ],
+    "unfilled": [
+     1,
+     15
+    ],
+    "all_attempts": [
+     57,
+     200
+    ]
+   }
+  },
+  "ada_same": {
+   "learned": {
+    "completed_faithful": [
+     366,
+     368
+    ],
+    "completed_evasive": [
+     107,
+     110
+    ],
+    "unfilled": [
+     99,
+     102
+    ],
+    "all_attempts": [
+     572,
+     580
+    ]
+   },
+   "rule": {
+    "completed_faithful": [
+     302,
+     368
+    ],
+    "completed_evasive": [
+     54,
+     110
+    ],
+    "unfilled": [
+     7,
+     102
+    ],
+    "all_attempts": [
+     363,
+     580
+    ]
+   }
+  },
+  "ada_flip": {
+   "learned": {
+    "completed_faithful": [
+     309,
+     309
+    ],
+    "completed_evasive": [
+     127,
+     128
+    ],
+    "unfilled": [
+     0,
+     0
+    ],
+    "all_attempts": [
+     436,
+     437
+    ]
+   },
+   "rule": {
+    "completed_faithful": [
+     307,
+     309
+    ],
+    "completed_evasive": [
+     125,
+     128
+    ],
+    "unfilled": [
+     0,
+     0
+    ],
+    "all_attempts": [
+     432,
+     437
+    ]
+   }
+  },
+  "ada_cross": {
+   "learned": {
+    "completed_faithful": [
+     158,
+     158
+    ],
+    "completed_evasive": [
+     61,
+     61
+    ],
+    "unfilled": [
+     15,
+     16
+    ],
+    "all_attempts": [
+     234,
+     235
+    ]
+   },
+   "rule": {
+    "completed_faithful": [
+     139,
+     158
+    ],
+    "completed_evasive": [
+     40,
+     61
+    ],
+    "unfilled": [
+     1,
+     16
+    ],
+    "all_attempts": [
+     180,
+     235
+    ]
+   }
+  }
+ },
+ "matched": {
+  "0.5": {
+   "learned": {
+    "all_attempts": [
+     5189,
+     5276
+    ],
+    "completed": [
+     3074,
+     3149
+    ],
+    "unfilled": [
+     2115,
+     2127
+    ]
+   },
+   "rule_fixed_k": null
+  },
+  "1.0": {
+   "learned": {
+    "all_attempts": [
+     5194,
+     5276
+    ],
+    "completed": [
+     3078,
+     3149
+    ],
+    "unfilled": [
+     2116,
+     2127
+    ]
+   },
+   "rule_fixed_k": null
+  },
+  "2.0": {
+   "learned": {
+    "all_attempts": [
+     5198,
+     5276
+    ],
+    "completed": [
+     3081,
+     3149
+    ],
+    "unfilled": [
+     2117,
+     2127
+    ]
+   },
+   "rule_fixed_k": {
+    "k": 0.5,
+    "false_per_100": 1.53,
+    "all_attempts": [
+     1151,
+     5276
+    ],
+    "completed": [
+     1126,
+     3149
+    ]
+   }
+  }
+ },
+ "held_out_pattern": {
+  "chen": {
+   "learned": {
+    "completed_faithful": [
+     308,
+     496
+    ],
+    "completed_evasive": [
+     30,
+     228
+    ],
+    "unfilled": [
+     218,
+     466
+    ],
+    "all_attempts": [
+     556,
+     1190
+    ]
+   },
+   "rule": {
+    "completed_faithful": [
+     262,
+     496
+    ],
+    "completed_evasive": [
+     10,
+     228
+    ],
+    "unfilled": [
+     23,
+     466
+    ],
+    "all_attempts": [
+     295,
+     1190
+    ]
+   },
+   "learned_at_1_false_case_per_100": {
+    "completed_faithful": [
+     491,
+     496
+    ],
+    "completed_evasive": [
+     161,
+     228
+    ],
+    "unfilled": [
+     426,
+     466
+    ],
+    "all_attempts": [
+     1078,
+     1190
+    ]
+   },
+   "false_cases_per_100_legit_account_sessions": 0.0,
+   "budget_only": {
+    "all_attempts": [
+     1045,
+     1190
+    ],
+    "false_cases_per_100_legit_account_sessions": 1.11
+   }
+  },
+  "coscia": {
+   "learned": {
+    "completed_faithful": [
+     243,
+     243
+    ],
+    "completed_evasive": [
+     74,
+     74
+    ],
+    "unfilled": [
+     1526,
+     1526
+    ],
+    "all_attempts": [
+     1843,
+     1843
+    ]
+   },
+   "rule": {
+    "completed_faithful": [
+     231,
+     243
+    ],
+    "completed_evasive": [
+     31,
+     74
+    ],
+    "unfilled": [
+     67,
+     1526
+    ],
+    "all_attempts": [
+     329,
+     1843
+    ]
+   },
+   "learned_at_1_false_case_per_100": {
+    "completed_faithful": [
+     243,
+     243
+    ],
+    "completed_evasive": [
+     74,
+     74
+    ],
+    "unfilled": [
+     1526,
+     1526
+    ],
+    "all_attempts": [
+     1843,
+     1843
+    ]
+   },
+   "false_cases_per_100_legit_account_sessions": 0.0,
+   "budget_only": {
+    "all_attempts": [
+     1843,
+     1843
+    ],
+    "false_cases_per_100_legit_account_sessions": 1.39
+   }
+  },
+  "oystacher": {
+   "learned": {
+    "completed_faithful": [
+     482,
+     502
+    ],
+    "completed_evasive": [
+     169,
+     216
+    ],
+    "unfilled": [
+     0,
+     1
+    ],
+    "all_attempts": [
+     651,
+     719
+    ]
+   },
+   "rule": {
+    "completed_faithful": [
+     490,
+     502
+    ],
+    "completed_evasive": [
+     183,
+     216
+    ],
+    "unfilled": [
+     0,
+     1
+    ],
+    "all_attempts": [
+     673,
+     719
+    ]
+   },
+   "learned_at_1_false_case_per_100": {
+    "completed_faithful": [
+     492,
+     502
+    ],
+    "completed_evasive": [
+     178,
+     216
+    ],
+    "unfilled": [
+     0,
+     1
+    ],
+    "all_attempts": [
+     670,
+     719
+    ]
+   },
+   "false_cases_per_100_legit_account_sessions": 0.0,
+   "budget_only": {
+    "all_attempts": [
+     690,
+     719
+    ],
+    "false_cases_per_100_legit_account_sessions": 1.39
+   }
+  },
+  "sarao": {
+   "learned": {
+    "completed_faithful": [
+     43,
+     53
+    ],
+    "completed_evasive": [
+     9,
+     18
+    ],
+    "unfilled": [
+     1,
+     1
+    ],
+    "all_attempts": [
+     53,
+     72
+    ]
+   },
+   "rule": {
+    "completed_faithful": [
+     47,
+     53
+    ],
+    "completed_evasive": [
+     5,
+     18
+    ],
+    "unfilled": [
+     1,
+     1
+    ],
+    "all_attempts": [
+     53,
+     72
+    ]
+   },
+   "learned_at_1_false_case_per_100": {
+    "completed_faithful": [
+     48,
+     53
+    ],
+    "completed_evasive": [
+     15,
+     18
+    ],
+    "unfilled": [
+     1,
+     1
+    ],
+    "all_attempts": [
+     64,
+     72
+    ]
+   },
+   "false_cases_per_100_legit_account_sessions": 0.0,
+   "budget_only": {
+    "all_attempts": [
+     67,
+     72
+    ],
+    "false_cases_per_100_legit_account_sessions": 1.67
+   }
+  },
+  "lebental": {
+   "learned": {
+    "completed_faithful": [
+     94,
+     126
+    ],
+    "completed_evasive": [
+     31,
+     59
+    ],
+    "unfilled": [
+     10,
+     15
+    ],
+    "all_attempts": [
+     135,
+     200
+    ]
+   },
+   "rule": {
+    "completed_faithful": [
+     51,
+     126
+    ],
+    "completed_evasive": [
+     5,
+     59
+    ],
+    "unfilled": [
+     1,
+     15
+    ],
+    "all_attempts": [
+     57,
+     200
+    ]
+   },
+   "learned_at_1_false_case_per_100": {
+    "completed_faithful": [
+     115,
+     126
+    ],
+    "completed_evasive": [
+     40,
+     59
+    ],
+    "unfilled": [
+     13,
+     15
+    ],
+    "all_attempts": [
+     168,
+     200
+    ]
+   },
+   "false_cases_per_100_legit_account_sessions": 0.0,
+   "budget_only": {
+    "all_attempts": [
+     171,
+     200
+    ],
+    "false_cases_per_100_legit_account_sessions": 0.83
+   }
+  }
+ },
+ "held_out_legitimate_type": {
+  "Scalper": {
+   "account_sessions": 60,
+   "flagged": 60,
+   "flagged_by_procedures": 1,
+   "all_attempts": [
+    5179,
+    5276
+   ],
+   "false_cases_per_100_legit_account_sessions": 8.33
+  },
+  "LeggedHedger": {
+   "account_sessions": 60,
+   "flagged": 56,
+   "flagged_by_procedures": 60,
+   "all_attempts": [
+    5176,
+    5276
+   ],
+   "false_cases_per_100_legit_account_sessions": 7.78
+  },
+  "BlockWorker": {
+   "account_sessions": 60,
+   "flagged": 60,
+   "flagged_by_procedures": 15,
+   "all_attempts": [
+    5177,
+    5276
+   ],
+   "false_cases_per_100_legit_account_sessions": 8.47
+  }
+ },
+ "examples": [
+  {
+   "account": "M_COSCIA",
+   "session": 44,
+   "time": 1605.414,
+   "orders": 3,
+   "seeded": true,
+   "score": 1.0,
+   "drops": {
+    "size against the displayed book": 0.1784,
+    "the account's session as a whole": 0.1762,
+    "what the account did on this side afterwards": 0.0008,
+    "the account's interest and executions on the other side": 0.0005,
+    "time at rest": 0.0,
+    "executions on these orders": 0.0
+   }
+  },
+  {
+   "account": "M_OYST",
+   "session": 41,
+   "time": 1446.07,
+   "orders": 3,
+   "seeded": true,
+   "score": 1.0,
+   "drops": {
+    "size against the displayed book": 0.1607,
+    "the account's session as a whole": 0.0827,
+    "the account's interest and executions on the other side": 0.0647,
+    "time at rest": 0.0039,
+    "executions on these orders": 0.0,
+    "what the account did on this side afterwards": 0.0
+   }
+  },
+  {
+   "account": "M_CHEN_HI",
+   "session": 44,
+   "time": 1704.439,
+   "orders": 3,
+   "seeded": true,
+   "score": 1.0,
+   "drops": {
+    "the account's session as a whole": 0.3579,
+    "size against the displayed book": 0.0588,
+    "the account's interest and executions on the other side": 0.0057,
+    "what the account did on this side afterwards": 0.0022,
+    "time at rest": 0.0,
+    "executions on these orders": 0.0
+   }
+  },
+  {
+   "account": "M_MM_CHEN",
+   "session": 39,
+   "time": 865.819,
+   "orders": 4,
+   "seeded": true,
+   "score": 0.9995,
+   "drops": {
+    "size against the displayed book": 0.3932,
+    "the account's session as a whole": 0.1202,
+    "the account's interest and executions on the other side": 0.0213,
+    "what the account did on this side afterwards": 0.0023,
+    "time at rest": 0.0,
+    "executions on these orders": 0.0
+   }
+  },
+  {
+   "account": "M_MM_LEB",
+   "session": 52,
+   "time": 1008.147,
+   "orders": 3,
+   "seeded": true,
+   "score": 0.9986,
+   "drops": {
+    "size against the displayed book": 0.4421,
+    "the account's session as a whole": 0.0837,
+    "the account's interest and executions on the other side": 0.0422,
+    "what the account did on this side afterwards": 0.0105,
+    "executions on these orders": 0.0,
+    "time at rest": -0.0004
+   }
+  },
+  {
+   "account": "M_ADA_FLIP",
+   "session": 43,
+   "time": 371.95,
+   "orders": 3,
+   "seeded": true,
+   "score": 0.9939,
+   "drops": {
+    "the account's session as a whole": 0.3223,
+    "size against the displayed book": 0.1713,
+    "the account's interest and executions on the other side": 0.0703,
+    "what the account did on this side afterwards": 0.0014,
+    "executions on these orders": 0.0,
+    "time at rest": -0.0002
+   }
+  },
+  {
+   "account": "M_SARAO",
+   "session": 37,
+   "time": 261.111,
+   "orders": 10,
+   "seeded": true,
+   "score": 0.9916,
+   "drops": {
+    "size against the displayed book": 0.7381,
+    "the account's session as a whole": 0.1707,
+    "the account's interest and executions on the other side": 0.0289,
+    "time at rest": 0.0182,
+    "what the account did on this side afterwards": 0.0034,
+    "executions on these orders": 0.0
+   }
+  },
+  {
+   "account": "M_CHEN_LO",
+   "session": 58,
+   "time": 355.969,
+   "orders": 5,
+   "seeded": true,
+   "score": 0.991,
+   "drops": {
+    "the account's session as a whole": 0.2118,
+    "size against the displayed book": 0.1072,
+    "time at rest": 0.0006,
+    "executions on these orders": 0.0,
+    "what the account did on this side afterwards": -0.0005,
+    "the account's interest and executions on the other side": -0.0031
+   }
+  },
+  {
+   "account": "M_LEB",
+   "session": 50,
+   "time": 843.627,
+   "orders": 2,
+   "seeded": true,
+   "score": 0.9777,
+   "drops": {
+    "size against the displayed book": 0.1596,
+    "the account's session as a whole": 0.0563,
+    "the account's interest and executions on the other side": 0.006,
+    "time at rest": 0.0008,
+    "executions on these orders": 0.0,
+    "what the account did on this side afterwards": -0.0004
+   }
+  },
+  {
+   "account": "M_ADA_SAME",
+   "session": 47,
+   "time": 1133.011,
+   "orders": 4,
+   "seeded": true,
+   "score": 0.9726,
+   "drops": {
+    "size against the displayed book": 0.1874,
+    "the account's session as a whole": 0.1323,
+    "executions on these orders": 0.0,
+    "what the account did on this side afterwards": 0.0,
+    "the account's interest and executions on the other side": -0.0005,
+    "time at rest": -0.0034
+   }
+  },
+  {
+   "account": "M_ADA_X",
+   "session": 38,
+   "time": 481.024,
+   "orders": 3,
+   "seeded": true,
+   "score": 0.9714,
+   "drops": {
+    "size against the displayed book": 0.1858,
+    "the account's session as a whole": 0.0765,
+    "time at rest": 0.0,
+    "executions on these orders": 0.0,
+    "what the account did on this side afterwards": -0.0011,
+    "the account's interest and executions on the other side": -0.0166
+   }
+  },
+  {
+   "account": "EXEC_2",
+   "session": 36,
+   "time": 817.438,
+   "orders": 2,
+   "seeded": false,
+   "score": 0.565,
+   "drops": {
+    "size against the displayed book": 0.3775,
+    "what the account did on this side afterwards": 0.0147,
+    "the account's session as a whole": 0.0096,
+    "executions on these orders": -0.0033,
+    "the account's interest and executions on the other side": -0.0647,
+    "time at rest": -0.1204
+   }
+  }
+ ]
+}

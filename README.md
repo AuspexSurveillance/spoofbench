@@ -29,6 +29,40 @@ Measured on held-out sessions of a simulated market and of recorded CME order-by
 Full tables: `FINDINGS.md` (simulated market), `FINDINGS_REAL.md` (all three side by side),
 `results/` and `results_real/`. Figure: `docs/fig_sweep.png`.
 
+## v0.5: a learned detector that starts from the cancel
+
+`spoofbench/learned.py` scores groups of orders that an account cancels together, with or without a
+fill, using a model trained on the seeded baseline sessions. `FINDINGS_V05.md` has the method, how
+it was developed, every result and the limits. Same sessions, same false-case budget as above
+(simulated / ZN / ES, test sessions):
+
+- Share of all seeded attempts found, including those in which the genuine order never traded:
+  procedures 38.8% / 24.3% / 47.3%; learned detector 97.2% / 99.4% / 76.7%.
+- Share of completed faithful episodes (the measure used above): procedures
+  76.3% / 88.4% / 74.5%; learned detector 97.7% / 99.6% / 88.7%.
+- False cases among legitimate account-sessions: procedures 5 of 540 / 3 of 480 / 2 of 160; learned detector
+  2 of 540 / 0 of 480 / 0 of 160.
+- Three equities patterns that were never used in training or development (v0.4 sessions):
+  trillium 97.6%, hold 99.9%, milrud 87.3% of all attempts
+  (procedures: 68.1%, 0.2%, 0.7%).
+- A futures pattern left out of training, share of all its attempts found (simulated / ZN / ES):
+  chen 85.0% / 65.6% / 42.6%; coscia 100.0% / 100.0% / 89.1%; oystacher 88.1% / 67.5% / 42.6%;
+  sarao 90.4% / 94.2% / 80.8%; lebental 66.0% (simulated only).
+- What does not work yet. A legitimate account type that is missing from the baseline is flagged in
+  nearly every session (stress tier: Scalper 60 of 60, LeggedHedger 56 of 60, BlockWorker 60 of 60;
+  the procedures flag 1, 60 and 15). For a pattern left out of training, the thresholds either keep
+  recall and lose control of false cases in one ZN run, or hold false cases and lose recall; both
+  settings are reported.
+
+All of this is on simulated accounts. Seeded episodes are more regular than real manipulation, so
+results for patterns seen in training flatter any trained model.
+
+```
+python run_learned.py --tier std        # also: --tier eq, --tier stress
+python run_real_learned.py prep DATADIR WINDIR ZN && python run_real_learned.py sim WINDIR RECDIR ZN && python run_real_learned.py eval RECDIR ZN results_v05
+python report_v05.py
+```
+
 ## Run it
 
     python tests/test_basic.py          # 5 checks, under a minute
@@ -64,9 +98,14 @@ To run the procedures on your own order and fill files, see `docs/RUN_ON_YOUR_OW
     spoofbench/detect.py     candidate pairing, detection procedures, two variants, calibration, scoring
     spoofbench/replay.py     replay of recorded order-by-order data with a queue-position model
     spoofbench/equities.py   extension set: three equities layering templates, account linking
+    spoofbench/learned.py    v0.5 learned detector: pull groups, features, model, out-of-fold thresholds, scoring
+    spoofbench/stress.py     v0.5 stress tier: harder legitimate accounts and adaptive manipulation
     run_benchmark.py         all experiments on the simulated market
     run_real.py              replay and experiments on recorded data
     run_equities.py          the extension set on the simulated market
+    run_learned.py           v0.5 learned detector against the procedures (tiers std, eq, stress)
+    run_real_learned.py      v0.5 learned detector on recorded data
+    report_v05.py            results_v05/*.json -> FINDINGS_V05.md
     report.py                results JSON -> Markdown
     tools/get_cme_mbo.py     prices, buys and downloads CME MBO files from Databento (asks before buying)
     tools/prep_dbn.py        cuts a Databento MBO day file into 30-minute session windows
