@@ -1,0 +1,68 @@
+{
+ "instrument": "ES",
+ "windows": [
+  1,
+  4
+ ],
+ "baseline_sessions": 10,
+ "test_sessions": 10,
+ "legit_account_sessions": 160,
+ "class_thresholds": {
+  "exec": 0.3,
+  "mm": 1.0,
+  "prop": 0.002
+ },
+ "note": "tools/fill_fix.py procedure, run in resumable steps. Class thresholds were re-chosen on the baseline days for each configuration and came out the same.",
+ "reference": {
+  "faithful_found": 430,
+  "faithful_total": 577,
+  "oystacher": [
+   75,
+   128
+  ],
+  "oystacher_evasive": [
+   27,
+   75
+  ],
+  "false_cases": 2
+ },
+ "flip variant without the fill test": {
+  "faithful_found": 448,
+  "faithful_total": 577,
+  "oystacher": [
+   93,
+   128
+  ],
+  "oystacher_evasive": [
+   30,
+   75
+  ],
+  "false_cases": 2
+ },
+ "fill limit 50% at the touch": {
+  "faithful_found": 447,
+  "faithful_total": 577,
+  "oystacher": [
+   92,
+   128
+  ],
+  "oystacher_evasive": [
+   29,
+   75
+  ],
+  "false_cases": 4
+ },
+ "no fill limit at the touch": {
+  "faithful_found": 451,
+  "faithful_total": 577,
+  "oystacher": [
+   95,
+   128
+  ],
+  "oystacher_evasive": [
+   31,
+   75
+  ],
+  "false_cases": 6
+ }
+}

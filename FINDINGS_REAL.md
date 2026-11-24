@@ -89,3 +89,26 @@ Every number is generated from results_real/*.json and results/results.json.
 
 The firm's accounts use the same lot sizes on every market. Multiplying each class multiple by the median displayed quantity within three ticks gives thresholds of roughly 20 to 110 lots on all three markets (apart from discretionary accounts on ES, where only the 5-lot floor applies). The two-orders-of-magnitude gap in multiples between ZN and ES therefore mirrors the gap in depth. The conclusion that a multiple cannot be carried between instruments stands; the size of the gap is a property of this design.
 
+## Fill-ratio test on a thin book: the change the paper proposed, now tested (ES)
+
+The paper found that on ES the 5% fill-ratio test removed flip episodes whose spoof orders, resting at
+the touch of a thin book, were partly executed before they were cancelled. It proposed two changes and
+tested neither. `tools/fill_fix.py` tests them on the same ES sessions (10 baseline, 10 test), with class
+thresholds re-chosen for each configuration. The thresholds came out the same in all four.
+
+```
+configuration                          faithful episodes   flip episodes   false cases (of 160)
+reference                              430 / 577           75 / 128        2
+flip variant without the fill test     448 / 577           93 / 128        2
+fill limit 50% at the touch            447 / 577           92 / 128        4
+no fill limit at the touch             451 / 577           95 / 128        6
+```
+
+Dropping the fill test from the flip variant alone recovers 18 flip episodes and adds no false case.
+Loosening the limit for every order entered at the touch recovers about the same number and doubles or
+triples the false cases, because legitimate passive orders at the touch are also partly filled and then
+cancelled. Of the 53 flip episodes missed in the reference run, 35 are still missed. In 23 of them the
+flip order did not execute on entry, which no change to the fill test can fix. ZN has not been re-run;
+8 of its 483 flip episodes had any fill on a spoof order, so little change is expected there.
+Results: `results_real/fill_fix_ES.json`.
+
